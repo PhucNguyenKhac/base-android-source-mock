@@ -2,7 +2,7 @@
 
 buildscript {
     ext.buildConfig = [
-        'compileSdk': 31,
+        'compileSdk': 33,
         'minSdk'    : 23,
         'targetSdk' : 31,
         'version'   : [
@@ -14,13 +14,13 @@ buildscript {
     ]
 
     ext.versions = [
-            'kotlin'                 : '1.4.31',
+            'kotlin'                 : '1.7.20',
             'kotlinCoroutines'       : '1.4.3-native-mt',
             'kotlinSerialization'    : '0.13.0',
             'ktor'                   : '1.2.1',
             'okhttp'                 : '4.9.0',
             'retrofit'               : '2.9.0',
-            'dagger'                 : '2.34',
+            'dagger'                 : '2.24',
             'mockito'                : '3.8.0',
             'ktx'                    : '1.3.2',
             'navigation'             : '2.3.4',
@@ -48,7 +48,8 @@ buildscript {
             "detekt"                 : '1.18.1',
             'timber'                 : '5.0.0-SNAPSHOT',
             'trustkit'               : '1.1.5',
-            'certificateTransparency': '0.2.0'
+            'certificateTransparency': '0.2.0',
+            'compose': "1.1.1"
     ]
 
     ext.deps = [
@@ -131,6 +132,10 @@ buildscript {
         'google'                 : [
             'gson'     : "com.google.code.gson:gson:${versions.gson}"
         ],
+            'compose': [
+                    "composeui": "androidx.compose.ui:ui:${versions.compose}",
+                    "composeTooling": "androidx.compose.ui:ui-tooling-preview:${versions.compose}"
+            ]
     ]
 
     repositories {
@@ -144,7 +149,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.3'
+        classpath 'com.android.tools.build:gradle:7.3.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
         classpath "org.jetbrains.kotlin:kotlin-serialization:1.4.10"
         classpath 'org.jlleitschuh.gradle:ktlint-gradle:8.2.0'
