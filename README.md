@@ -23,6 +23,7 @@ The application is written in  `Kotlin` language and we will be using `MVVM` ove
 #### **Architecture Design** (If needed)
 
 ## **API Considerations**
+We are using Compose in the `App` layer of the application
 
 ## **Dependency Management**
 For Dependency Management we are using `Dagger 2` along with `Android's` native `Binding Library`
