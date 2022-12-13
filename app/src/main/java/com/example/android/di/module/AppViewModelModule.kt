@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.di.ViewModelFactory
 import com.example.android.di.ViewModelKey
-import com.example.android.viewmodel.LoginViewModel
+import com.example.android.viewmodel.WellnessViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -18,6 +18,6 @@ abstract class AppViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(LoginViewModel::class)
-    abstract fun bindLoginViewModel(logoutViewModel: LoginViewModel): ViewModel
+    @ViewModelKey(WellnessViewModel::class)
+    abstract fun bindWellnessViewModel(wellnessViewModel: WellnessViewModel): ViewModel
 }
