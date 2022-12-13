@@ -41,10 +41,12 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+                    val list = remember { getWellnessTasks().toMutableStateList() }
                     Column() {
                         StatefulCounter()
                         WellnessTasksList(
-                            list = getWellnessTasks()
+                            list = list,
+                            onCloseTask = { task -> list.remove(task) }
                         )
                     }
                 }
