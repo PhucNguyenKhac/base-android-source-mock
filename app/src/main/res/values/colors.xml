@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#FFFFFF</color>
-    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FFFFFF</color>
     <color name="textInputLayout">#96ffffff</color>
     <color name="ALPHA_WHITE_80">#CCFFFFFF</color>
+
+    //text color
+    <color name="green_text">#1ED760</color>
+    <color name="stroke_letter">#99FFFFFF</color>
+    <color name="yellow">#D7BD1E</color>
+
+    //gradient color
+    <color name="center_color">#00ffffff</color>
+    <color name="start_color">#F7000000</color>
+
+    //button color
+    <color name="green_button">#42C83C</color>
+
+    //image color
+    <color name="stroke_image_ic_left">#42C83C</color>
+
 </resources>

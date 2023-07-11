@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Mock Spotify</string>
+    <string name="sign_up_free">Sign up free</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_phone_number">Continue with phone number</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="log_in">Log in</string>
+    <string name="click_here">Click Here</string>
+    <string name="if_you_need_any_support_click_here">If You Need Any Support</string>
+    <string name="enter_username_or_email">Enter Username or email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="or">Or</string>
+    <string name="don_t_have_an_account">Don\'t Have An Account?</string>
+    <string name="register">Register</string>
+    <string name="have_an_account">Have An Account?</string>
+    <string name="full_name">Full name</string>
+    <string name="enter_email">Enter email</string>
+    <string name="repeat_password">Repeat Password</string>
 </resources>
