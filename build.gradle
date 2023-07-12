@@ -48,7 +48,8 @@ buildscript {
             "detekt"                 : '1.18.1',
             'timber'                 : '5.0.0-SNAPSHOT',
             'trustkit'               : '1.1.5',
-            'certificateTransparency': '0.2.0'
+            'certificateTransparency': '0.2.0',
+            'lottie': '6.0.1'
     ]
 
     ext.deps = [
@@ -131,6 +132,7 @@ buildscript {
         'google'                 : [
             'gson'     : "com.google.code.gson:gson:${versions.gson}"
         ],
+        'lottie': "com.airbnb.android:lottie:${versions.lottie}"
     ]
 
     repositories {

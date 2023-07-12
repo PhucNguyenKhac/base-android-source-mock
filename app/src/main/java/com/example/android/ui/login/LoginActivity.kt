@@ -5,8 +5,10 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.databinding.LoginActivityBinding
+import com.example.android.ui.BaseActivity
 import com.example.android.viewmodel.LoginViewModel
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
@@ -14,14 +16,14 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
-class LoginActivity : AppCompatActivity(), HasAndroidInjector {
+class LoginActivity : BaseActivity(), HasAndroidInjector {
     private lateinit var binding: LoginActivityBinding
 
     @Inject
     internal lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    override val toolBar: Toolbar?
+        get() = null
 
     private val viewModel by lazy {
         ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
@@ -35,10 +37,10 @@ class LoginActivity : AppCompatActivity(), HasAndroidInjector {
         setContentView(view)
         setUpViews()
         viewModel.isLoading.observe(this) {
-            binding.loading.visibility = if (it) {
-                View.VISIBLE
+            if (it) {
+                loading()
             } else {
-                View.INVISIBLE
+                dismiss()
             }
         }
 
