@@ -13,3 +13,4 @@ internal abstract class AppFragmentModule {
     @ContributesAndroidInjector
     internal abstract fun contributeGetStartedFragment(): GetStartedFragment
 }
+

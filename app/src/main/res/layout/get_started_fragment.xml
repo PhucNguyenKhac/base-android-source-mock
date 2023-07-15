@@ -1,10 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
     <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/definite_dimen_390"
+        android:layout_height="@dimen/definite_dimen_38"
+        android:layout_marginTop="@dimen/definite_dimen_30"
+        android:src="@drawable/spotify_logo" />
+
+    <ImageView
+        android:id="@+id/imageBackground"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/get_started_mock"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="@dimen/definite_dimen_20"
+        android:src="@drawable/background_app" />
+
+    <TextView
+        android:id="@+id/sloganText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/imageBackground"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/definite_dimen_20"
+        android:text="Music for everyone"
+        android:textColor="#1ED760"
+        android:textSize="@dimen/definite_dimen_24"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sloganText"
+        android:layout_marginLeft="@dimen/definite_dimen_20"
+        android:layout_marginTop="@dimen/definite_dimen_10"
+        android:layout_marginRight="@dimen/definite_dimen_20"
+        android:text="@string/description_app"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="@dimen/definite_dimen_12" />
+
+    <Button
+        android:layout_width="@dimen/definite_dimen_340"
+        android:layout_height="wrap_content"
+        android:text="Get Started"
+        android:layout_below="@+id/description"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/definite_dimen_10"
+        android:background="@drawable/button"
         />
-</LinearLayout>
+</RelativeLayout>
