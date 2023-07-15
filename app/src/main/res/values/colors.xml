@@ -5,7 +5,8 @@
     <color name="colorAccent">#FFFFFF</color>
     <color name="textInputLayout">#96ffffff</color>
     <color name="ALPHA_WHITE_80">#CCFFFFFF</color>
-
+    <color name="green">#42C83C</color>
+    <color name="black">#000000</color>
     //text color
     <color name="green_text">#1ED760</color>
     <color name="stroke_letter">#99FFFFFF</color>
@@ -20,5 +21,6 @@
 
     //image color
     <color name="stroke_image_ic_left">#42C83C</color>
+
 
 </resources>
