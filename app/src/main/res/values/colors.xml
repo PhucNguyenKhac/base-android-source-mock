@@ -22,5 +22,5 @@
     //image color
     <color name="stroke_image_ic_left">#42C83C</color>
 
-
+    <color name="white">#FFFFFF</color>
 </resources>
