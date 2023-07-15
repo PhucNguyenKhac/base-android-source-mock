@@ -54,6 +54,7 @@ android {
         }
         kapt deps.dagger.compiler
         kapt deps.dagger.androidProcessor
+
     }
 
 
