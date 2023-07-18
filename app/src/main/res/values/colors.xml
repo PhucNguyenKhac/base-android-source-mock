@@ -5,4 +5,6 @@
     <color name="colorAccent">#FFFFFF</color>
     <color name="textInputLayout">#96ffffff</color>
     <color name="ALPHA_WHITE_80">#CCFFFFFF</color>
+    <color name="green">#42C83C</color>
+    <color name="black">#000000</color>
 </resources>
