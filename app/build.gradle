@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
 }
 
 
@@ -98,6 +99,7 @@ dependencies {
     implementation deps.flexbox
     implementation project(':domain')
     implementation project(':external')
+    implementation 'com.google.firebase:firebase-firestore:24.1.1'
 
     testImplementation deps.junit
     testImplementation deps.androidx.test.testingCore
