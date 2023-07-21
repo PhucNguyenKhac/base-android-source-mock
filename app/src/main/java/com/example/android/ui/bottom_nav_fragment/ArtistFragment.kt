@@ -29,11 +29,11 @@ class ArtistFragment : Fragment() {
     private fun displayListArtists() {
         val layout = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         artistBinding.rcvData.layoutManager = layout
-        val adapter = ArtistAdapter(getListAritst())
+        val adapter = ArtistAdapter(getListArtist())
         artistBinding.rcvData.adapter = adapter
     }
 
-    private fun getListAritst(): List<Artist> {
+    private fun getListArtist(): List<Artist> {
         val list = mutableListOf<Artist>()
 
         list.add(Artist(R.drawable.img_artist_test, "Adele",43877516 ))
@@ -42,7 +42,6 @@ class ArtistFragment : Fragment() {
         list.add(Artist(R.drawable.img_artist_test, "Adele",43877516 ))
         list.add(Artist(R.drawable.img_artist_test, "Adele",43877516 ))
         list.add(Artist(R.drawable.img_artist_test, "Adele",43877516 ))
-
 
         return list
     }

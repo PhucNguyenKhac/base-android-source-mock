@@ -50,7 +50,8 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbarHomepage">
@@ -180,6 +181,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layout1" />
 
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcvData"
                 android:layout_width="match_parent"
@@ -196,6 +198,7 @@
                 android:layout_height="@dimen/definite_dimen_50"
                 android:layout_marginStart="@dimen/definite_dimen_30"
                 android:layout_marginTop="@dimen/definite_dimen_30"
+                android:background="@color/colorPrimaryDark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rcvData"
@@ -205,8 +208,6 @@
                 app:tabMode="scrollable"
                 app:tabPaddingEnd="@dimen/definite_dimen_30"
                 app:tabSelectedTextColor="@color/colorPrimary"
-                app:tabTextAppearance="@style/TabTextStyle"
-                app:tabBackground="@android:color/black"
                 app:tabTextColor="@color/ALPHA_WHITE_60" />
 
             <androidx.viewpager2.widget.ViewPager2
@@ -214,6 +215,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/definite_dimen_30"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tabLayout" />

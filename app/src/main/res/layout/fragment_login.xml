@@ -110,10 +110,12 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/usernameMailInputEdt"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/definite_dimen_48"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
+                android:background="@drawable/bg_transparent"
                 android:inputType="text"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimary"
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -136,6 +138,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
+                android:background="@drawable/bg_transparent"
                 android:inputType="textPassword"
                 android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/green_text" />
@@ -164,7 +167,7 @@
         app:layout_constraintStart_toStartOf="@id/tvForgotPass"
         app:layout_constraintTop_toBottomOf="@id/tvForgotPass" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvLoginInLoginLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

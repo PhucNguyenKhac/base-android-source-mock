@@ -28,4 +28,7 @@
 
     <color name="yellow_view">#D7BD1E</color>
 
+    //bottom bar background color
+    <color name="bottom_nav_background">#333333</color>
+
 </resources>
