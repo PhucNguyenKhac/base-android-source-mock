@@ -43,14 +43,6 @@ class HomepageFragment : Fragment() {
 
         homepageBinding.viewpager2Homepage.adapter = adapter
 
-
-//        for (i in 0 until homepageBinding.tabLayout.tabCount) {
-//            if (i == 0) {
-//                tabStates.add(true)
-//            }
-//            tabStates.add(false)
-//        }
-
         for (i in 0 until homepageBinding.tabLayout.tabCount) {
             if (i == 0) {
                 tabStates.add(true)
