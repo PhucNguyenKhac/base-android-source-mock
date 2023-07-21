@@ -2,19 +2,29 @@ package com.example.android.ui.login
 
 import android.os.Bundle
 import android.util.Log
+import android.util.SparseArray
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.util.forEach
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.databinding.LoginActivityBinding
 import com.example.android.ui.BaseActivity
 import com.example.android.viewmodel.LoginViewModel
+import com.maxrave.kotlinyoutubeextractor.State
+import com.maxrave.kotlinyoutubeextractor.VideoMeta
+import com.maxrave.kotlinyoutubeextractor.YTExtractor
+import com.maxrave.kotlinyoutubeextractor.YtFile
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import javax.inject.Inject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class LoginActivity : BaseActivity(), HasAndroidInjector {
     private lateinit var binding: LoginActivityBinding
@@ -57,7 +67,25 @@ class LoginActivity : BaseActivity(), HasAndroidInjector {
 
     private fun setUpViews() {
         binding.signIn.setOnClickListener {
-            viewModel.login(binding.username.text.toString(), binding.password.text.toString())
+            //If your YouTube link is "https://www.youtube.com/watch?v=IDwytT0wFRM" so this videoId is "IDwytT0wFRM"
+            val videoId = "3Wk9ZoiJtiM"
+            val yt = YTExtractor(con = this, CACHING = true, LOGGING = true, retryCount = 3)
+// CACHING and LOGGING are 2 optional params. LOGGING is for showing Log and CACHING is for saving SignatureCipher to optimize extracting time (not recommend CACHING to extract multiple videos because it causes HTTP 403 Error)
+// retryCount is for retrying when extract fail (default is 1)
+            var ytFiles: SparseArray<YtFile>? = null
+            var videoMeta: VideoMeta? = null
+            CoroutineScope(Dispatchers.Main).launch {
+                yt.extract(videoId)
+                //Before get YtFile or VideoMeta, you need to check state of yt object
+                if (yt.state == State.SUCCESS) {
+                    ytFiles = yt.getYTFiles()
+                    videoMeta = yt.getVideoMeta()
+                    ytFiles?.forEach { key, value ->
+                        Log.d("#PhucNK1 ", value.url ?: "")
+                    }
+
+                }
+            }
         }
     }
 
