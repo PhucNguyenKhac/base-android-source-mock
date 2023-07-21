@@ -2,6 +2,10 @@ package com.example.android.di.module
 
 import com.example.android.di.scope.FragmentScoped
 import com.example.android.ui.GetStartedFragment
+import com.example.android.ui.bottom_nav_fragment.HomepageFragment
+import com.example.android.ui.bottom_nav_fragment.LibraryFragment
+import com.example.android.ui.login.LoginFragment
+import com.example.android.ui.login.RegisterFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -12,5 +16,21 @@ internal abstract class AppFragmentModule {
     @FragmentScoped
     @ContributesAndroidInjector
     internal abstract fun contributeGetStartedFragment(): GetStartedFragment
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    internal abstract fun contributeLoginFragment(): LoginFragment
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    internal abstract fun contributeRegisterFragment(): RegisterFragment
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    internal abstract fun contributeHomepageFragment(): HomepageFragment
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    internal abstract fun contributeLibraryFragment(): LibraryFragment
 }
 

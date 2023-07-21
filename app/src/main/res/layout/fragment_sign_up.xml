@@ -23,13 +23,13 @@
             android:layout_gravity="start"
             android:layout_marginStart="@dimen/definite_dimen_30"
             android:background="@drawable/custom_image_icon_left"
-            android:src="@drawable/icon_left"
+            android:src="@drawable/ic_left_arrow"
             tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/imgLogo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/definite_dimen_40"
             android:layout_gravity="center"
             android:layout_marginStart="@dimen/definite_dimen_8"
             android:layout_marginEnd="@dimen/definite_dimen_8"
@@ -66,6 +66,7 @@
             android:layout_marginEnd="@dimen/definite_dimen_30"
             android:layout_marginBottom="@dimen/definite_dimen_10"
             android:background="@drawable/custom_button_green"
+            android:fontFamily="@font/montserrat"
             android:paddingTop="@dimen/definite_dimen_16"
             android:paddingBottom="@dimen/definite_dimen_16"
             android:text="@string/sign_up_free"
@@ -75,8 +76,7 @@
             android:textSize="@dimen/text_size_xnormal"
             android:textStyle="bold" />
 
-
-        <TextView
+        <Button
             android:id="@+id/tvContinuePhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -88,17 +88,19 @@
             android:layout_marginBottom="@dimen/definite_dimen_10"
             android:background="@drawable/custom_button"
             android:drawableStart="@drawable/ic_phone"
+            android:fontFamily="@font/montserrat"
             android:paddingStart="@dimen/definite_dimen_30"
             android:paddingTop="@dimen/definite_dimen_16"
             android:paddingBottom="@dimen/definite_dimen_16"
             android:text="@string/continue_with_phone_number"
             android:textAlignment="center"
+            android:textAllCaps="false"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/text_size_xnormal"
+            android:textSize="@dimen/text_size_normal"
             android:textStyle="bold"
             tools:ignore="RtlSymmetry,UseCompatTextViewDrawableXml" />
 
-        <TextView
+        <Button
             android:id="@+id/tvContinueGoogle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -110,18 +112,20 @@
             android:layout_marginBottom="@dimen/definite_dimen_10"
             android:background="@drawable/custom_button"
             android:drawableStart="@drawable/ic_google"
+            android:fontFamily="@font/montserrat"
             android:paddingStart="@dimen/definite_dimen_30"
             android:paddingTop="@dimen/definite_dimen_16"
             android:paddingBottom="@dimen/definite_dimen_16"
             android:text="@string/continue_with_google"
             android:textAlignment="center"
+            android:textAllCaps="false"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/text_size_xnormal"
+            android:textSize="@dimen/text_size_normal"
             android:textStyle="bold"
             tools:ignore="RtlSymmetry,UseCompatTextViewDrawableXml" />
 
 
-        <TextView
+        <Button
             android:id="@+id/tvContinueFacebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -132,25 +136,29 @@
             android:layout_marginEnd="@dimen/definite_dimen_30"
             android:layout_marginBottom="@dimen/definite_dimen_10"
             android:background="@drawable/custom_button"
-            android:drawableStart="@drawable/ic_facebook"
+            android:drawableStart="@drawable/ic_fb"
+            android:fontFamily="@font/montserrat"
             android:paddingStart="@dimen/definite_dimen_30"
             android:paddingTop="@dimen/definite_dimen_16"
             android:paddingBottom="@dimen/definite_dimen_16"
             android:text="@string/continue_with_facebook"
             android:textAlignment="center"
+            android:textAllCaps="false"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/text_size_xnormal"
+            android:textSize="@dimen/text_size_normal"
             android:textStyle="bold"
             tools:ignore="RtlSymmetry,UseCompatTextViewDrawableXml" />
 
-        <TextView
+        <Button
             android:id="@+id/tvLoginInSignUpLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvContinueFacebook"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/definite_dimen_16"
+            android:background="@color/colorPrimaryDark"
             android:text="@string/log_in"
+            android:textAllCaps="false"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_xxnormal"
             android:textStyle="bold" />

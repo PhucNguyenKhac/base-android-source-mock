@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:id="@+id/imgArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_artist_test"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvArtistName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="Adele"
+        android:layout_marginTop="@dimen/definite_dimen_20"
+        android:textSize="@dimen/text_size_large"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginStart="@dimen/definite_dimen_10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imgArtist"
+        app:layout_constraintBottom_toTopOf="@id/tvListenersCountNumber"
+        />
+
+    <TextView
+        android:id="@+id/tvListenersCountNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="43,877,516"
+        android:textSize="@dimen/text_size_normal"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginStart="@dimen/definite_dimen_10"
+        app:layout_constraintStart_toEndOf="@id/imgArtist"
+        android:layout_marginBottom="@dimen/definite_dimen_20"
+        app:layout_constraintTop_toBottomOf="@id/tvArtistName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tvListenersText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/monthly_listeners"
+        android:textSize="@dimen/text_size_normal"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginStart="@dimen/definite_dimen_4"
+        app:layout_constraintStart_toEndOf="@id/tvListenersCountNumber"
+        app:layout_constraintTop_toTopOf="@id/tvListenersCountNumber"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_vector_right"
+        android:layout_marginEnd="@dimen/definite_dimen_20"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
