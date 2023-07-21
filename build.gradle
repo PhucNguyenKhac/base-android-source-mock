@@ -49,7 +49,8 @@ buildscript {
             'timber'                 : '5.0.0-SNAPSHOT',
             'trustkit'               : '1.1.5',
             'certificateTransparency': '0.2.0',
-            'lottie': '6.0.1'
+            'lottie': '6.0.1',
+            'youtubeExtractor': '0.0.6'
     ]
 
     ext.deps = [
@@ -132,7 +133,8 @@ buildscript {
         'google'                 : [
             'gson'     : "com.google.code.gson:gson:${versions.gson}"
         ],
-        'lottie': "com.airbnb.android:lottie:${versions.lottie}"
+        'lottie': "com.airbnb.android:lottie:${versions.lottie}",
+            'youtubeExtractor': "com.github.maxrave-dev:kotlin-youtubeExtractor:${versions.youtubeExtractor}"
     ]
 
     repositories {
@@ -143,6 +145,7 @@ buildscript {
         flatDir {
             dirs 'libs'
         }
+        maven { url 'https://jitpack.io' }
     }
 
     dependencies {
