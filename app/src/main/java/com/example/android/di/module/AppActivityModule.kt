@@ -1,6 +1,7 @@
 package com.example.android.di.module
 
 import com.example.android.di.scope.ActivityScoped
+import com.example.android.ui.activity.MainActivity
 import com.example.android.ui.login.LoginActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -12,4 +13,8 @@ abstract class AppActivityModule {
     @ActivityScoped
     @ContributesAndroidInjector
     internal abstract fun bindLoginActivity(): LoginActivity
+
+    @ActivityScoped
+    @ContributesAndroidInjector
+    internal abstract fun bindMainActivity(): MainActivity
 }

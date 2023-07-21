@@ -1,10 +1,11 @@
-package com.example.android.ui
+package com.example.android.ui.activity
 
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
+import com.example.android.ui.LoadingFragment
 import javax.inject.Inject
 
 abstract class BaseActivity : AppCompatActivity() {

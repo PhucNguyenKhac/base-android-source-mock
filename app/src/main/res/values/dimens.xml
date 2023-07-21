@@ -26,6 +26,7 @@
     <dimen name="definite_dimen_100">100dp</dimen>
     <dimen name="definite_dimen_120">120dp</dimen>
     <dimen name="definite_dimen_130">130dp</dimen>
+    <dimen name="definite_dimen_140">140dp</dimen>
     <dimen name="definite_dimen_150">150dp</dimen>
     <dimen name="definite_dimen_200">200dp</dimen>
     <dimen name="definite_dimen_390">390dp</dimen>

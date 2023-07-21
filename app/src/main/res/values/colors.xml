@@ -7,6 +7,9 @@
     <color name="ALPHA_WHITE_80">#CCFFFFFF</color>
     <color name="green">#42C83C</color>
     <color name="black">#000000</color>
+    <color name="ALPHA_WHITE_60">#99FFFFFF</color>
+
+
     //text color
     <color name="green_text">#1ED760</color>
     <color name="stroke_letter">#99FFFFFF</color>
@@ -22,5 +25,6 @@
     //image color
     <color name="stroke_image_ic_left">#42C83C</color>
 
-    <color name="white">#FFFFFF</color>
+    <color name="yellow_view">#D7BD1E</color>
+
 </resources>
