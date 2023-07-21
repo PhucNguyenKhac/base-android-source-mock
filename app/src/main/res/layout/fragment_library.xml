@@ -32,12 +32,11 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/definite_dimen_40"
             android:layout_gravity="center"
+            android:fontFamily="@font/montserrat"
+            android:gravity="center"
             android:text="Playlist"
             android:textColor="@color/colorPrimary"
-            android:gravity="center"
-            android:fontFamily="@font/montserrat"
-            android:textSize="@dimen/text_size_large"
-            />
+            android:textSize="@dimen/text_size_large" />
 
         <ImageView
             android:id="@+id/icSetting"
@@ -51,21 +50,15 @@
             tools:ignore="ContentDescription" />
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvData"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="@dimen/definite_dimen_30"
+        android:layout_marginTop="@dimen/definite_dimen_30"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbarPlaylist"
-        app:layout_constraintBottom_toBottomOf="parent"
-        >
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcvData"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="@dimen/definite_dimen_30"
-            android:layout_marginTop="@dimen/definite_dimen_30"
-            />
-    </androidx.core.widget.NestedScrollView>
+        app:layout_constraintTop_toBottomOf="@id/toolbarPlaylist" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

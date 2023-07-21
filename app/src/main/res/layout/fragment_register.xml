@@ -109,7 +109,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/nameInputEdt"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/definite_dimen_48"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_transparent"
                 android:fontFamily="@font/montserrat"
                 android:inputType="text"
                 android:textColor="@color/colorPrimary"
@@ -133,7 +134,8 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/usernameMailInputEdt"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/definite_dimen_48"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_transparent"
                 android:fontFamily="@font/montserrat"
                 android:inputType="text"
                 android:textColor="@color/colorPrimary"
@@ -160,6 +162,7 @@
                 android:id="@+id/passwordInputEdt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_transparent"
                 android:fontFamily="@font/montserrat"
                 android:inputType="textPassword"
                 android:textColor="@color/colorPrimary"
@@ -185,16 +188,16 @@
                 android:id="@+id/passwordRepeatInputEdt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/bg_transparent"
                 android:fontFamily="@font/montserrat"
                 android:inputType="textPassword"
                 android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/green_text"
-
                 android:textSize="@dimen/text_size_normal" />
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tvRegisterInRegisterLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -45,6 +45,7 @@ class LibraryFragment : Fragment() {
         list.add(Playlist(R.drawable.img_song_test, "Liked Songs",128))
         list.add(Playlist(R.drawable.img_song_test, "Liked Songs",128))
         list.add(Playlist(R.drawable.img_song_test, "Liked Songs",128))
+        list.add(Playlist(R.drawable.img_song_test, "Liked Songs",128))
 
         return list
     }
