@@ -45,7 +45,8 @@
         android:textColor="#ffffff"
         android:textSize="@dimen/definite_dimen_12" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGetStarted"
         android:layout_width="@dimen/definite_dimen_340"
         android:layout_height="wrap_content"
         android:text="Get Started"

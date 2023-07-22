@@ -2,13 +2,17 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/get_started_fragment"
+    app:startDestination="@id/get_started_fragment "
     android:id="@+id/splash_nav_graph">
 
     <fragment
         android:id="@+id/get_started_fragment"
         android:name="com.example.android.ui.GetStartedFragment"
-        tools:layout="@layout/get_started_fragment">
+        tools:layout="@layout/get_started_fragment"
+        >
+        <action
+            android:id="@+id/actionGetStartedToSignUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
