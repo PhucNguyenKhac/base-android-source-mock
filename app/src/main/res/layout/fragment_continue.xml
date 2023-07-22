@@ -16,7 +16,7 @@
         app:layout_constraintVertical_bias="0.36"
         app:srcCompat="@drawable/image_group" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
         android:layout_width="261dp"
         android:layout_height="54dp"
