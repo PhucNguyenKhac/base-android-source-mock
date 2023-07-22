@@ -76,7 +76,7 @@
             android:textSize="@dimen/text_size_xnormal"
             android:textStyle="bold" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/tvContinuePhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
             android:textStyle="bold"
             tools:ignore="RtlSymmetry,UseCompatTextViewDrawableXml" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/tvContinueGoogle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
             tools:ignore="RtlSymmetry,UseCompatTextViewDrawableXml" />
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/tvContinueFacebook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -149,7 +149,7 @@
             android:textStyle="bold"
             tools:ignore="RtlSymmetry,UseCompatTextViewDrawableXml" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/tvLoginInSignUpLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -33,5 +33,6 @@
 
     <style name="TabTextStyle" parent="TextAppearance.Design.Tab">
         <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">20sp</item>
     </style>
 </resources>

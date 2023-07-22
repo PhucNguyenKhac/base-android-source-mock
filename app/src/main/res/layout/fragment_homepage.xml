@@ -206,6 +206,7 @@
                 app:tabPaddingEnd="@dimen/definite_dimen_30"
                 app:tabSelectedTextColor="@color/colorPrimary"
                 app:tabTextAppearance="@style/TabTextStyle"
+                app:tabBackground="@android:color/black"
                 app:tabTextColor="@color/ALPHA_WHITE_60" />
 
             <androidx.viewpager2.widget.ViewPager2
@@ -218,7 +219,6 @@
                 app:layout_constraintTop_toBottomOf="@id/tabLayout" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.core.widget.NestedScrollView>
 
 
