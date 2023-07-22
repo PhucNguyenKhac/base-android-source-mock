@@ -9,7 +9,7 @@ import okio.Buffer
 
 class CurlHttpLoggingInterceptor @JvmOverloads constructor() :
     Interceptor {
-
+    //https://spotify-redesign-mock.firebaseapp.com/__/auth/handler
     interface Logger {
         fun log(message: String)
     }
