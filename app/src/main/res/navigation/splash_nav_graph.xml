@@ -12,7 +12,9 @@
         >
         <action
             android:id="@+id/actionGetStartedToSignUpFragment"
-            app:destination="@id/signUpFragment" />
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@anim/enter_anim"
+            app:exitAnim="@anim/exit_anim"/>
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
