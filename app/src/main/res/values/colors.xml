@@ -21,6 +21,7 @@
 
     //button color
     <color name="green_button">#42C83C</color>
+    <color name="green_button_clicked">#0A8005</color>
 
     //image color
     <color name="stroke_image_ic_left">#42C83C</color>

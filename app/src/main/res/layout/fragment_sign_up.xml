@@ -15,17 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/icLeft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginStart="@dimen/definite_dimen_30"
-            android:background="@drawable/custom_image_icon_left"
-            android:src="@drawable/ic_left_arrow"
-            tools:ignore="ContentDescription" />
-
         <ImageView
             android:id="@+id/imgLogo"
             android:layout_width="wrap_content"
@@ -58,14 +47,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/tvSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/definite_dimen_30"
             android:layout_marginEnd="@dimen/definite_dimen_30"
             android:layout_marginBottom="@dimen/definite_dimen_10"
-            android:background="@drawable/custom_button_green"
+            android:background="@drawable/blue_button_state"
             android:fontFamily="@font/montserrat"
             android:paddingTop="@dimen/definite_dimen_16"
             android:paddingBottom="@dimen/definite_dimen_16"
@@ -86,7 +75,7 @@
             android:layout_marginStart="@dimen/definite_dimen_30"
             android:layout_marginEnd="@dimen/definite_dimen_30"
             android:layout_marginBottom="@dimen/definite_dimen_10"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/black_button_state"
             android:drawableStart="@drawable/ic_phone"
             android:fontFamily="@font/montserrat"
             android:paddingStart="@dimen/definite_dimen_30"
@@ -110,7 +99,7 @@
             android:layout_marginStart="@dimen/definite_dimen_30"
             android:layout_marginEnd="@dimen/definite_dimen_30"
             android:layout_marginBottom="@dimen/definite_dimen_10"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/black_button_state"
             android:drawableStart="@drawable/ic_google"
             android:fontFamily="@font/montserrat"
             android:paddingStart="@dimen/definite_dimen_30"
@@ -135,7 +124,7 @@
             android:layout_marginStart="@dimen/definite_dimen_30"
             android:layout_marginEnd="@dimen/definite_dimen_30"
             android:layout_marginBottom="@dimen/definite_dimen_10"
-            android:background="@drawable/custom_button"
+            android:background="@drawable/black_button_state"
             android:drawableStart="@drawable/ic_fb"
             android:fontFamily="@font/montserrat"
             android:paddingStart="@dimen/definite_dimen_30"
@@ -156,7 +145,7 @@
             android:layout_below="@id/tvContinueFacebook"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/definite_dimen_16"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/black_button_state"
             android:text="@string/log_in"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimary"
