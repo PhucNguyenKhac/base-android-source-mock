@@ -3,5 +3,5 @@
     android:padding="10dp"
     android:shape="rectangle">
 
-    <solid android:color="@color/bottom_nav_bg"/>
+    <solid android:color="@color/bottom_nav_background"/>
 </shape>
