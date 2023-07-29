@@ -3,15 +3,14 @@ package com.example.android.ui.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.android.R
 import com.example.android.databinding.ActivityMainBinding
 import com.example.android.ui.bottom_nav_fragment.HomepageFragment
 import com.example.android.ui.bottom_nav_fragment.LibraryFragment
-import kotlinx.android.synthetic.main.custom_bottom_bar.view.*
 
-@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private var selectedTab = 1
@@ -23,80 +22,131 @@ class MainActivity : AppCompatActivity() {
         private const val TAB_PROFILE = 4
     }
 
-
-    private val mainBinding: ActivityMainBinding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
+    private val imgTop by lazy {
+        listOf(
+            mainBinding.imgTopHome,
+            mainBinding.imgTopPlaylist,
+            mainBinding.imgTopHistory,
+            mainBinding.imgTopProfile
+        )
     }
+
+    private val tvBottomBarTab by lazy {
+        listOf(
+            mainBinding.tvHome,
+            mainBinding.tvPlaylist,
+            mainBinding.tvHistory,
+            mainBinding.tvProfile
+        )
+    }
+
+    private val imgBottomBar by lazy {
+        listOf(
+            mainBinding.imgHome,
+            mainBinding.imgPlaylist,
+            mainBinding.imgHistory,
+            mainBinding.imgProfile
+        )
+    }
+
+    private val drawableResources = listOf(
+        R.drawable.ic_home,
+        R.drawable.ic_playlist,
+        R.drawable.ic_history,
+        R.drawable.ic_profile
+    )
+
+    private lateinit var mainBinding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
 
         replaceFragment(HomepageFragment())
 
-        mainBinding.homeLayout.setOnClickListener {
-            selectTab(TAB_HOME, HomepageFragment(), R.drawable.ic_home_selected, mainBinding.tvHome)
-        }
-
-        mainBinding.playlistLayout.setOnClickListener {
-            selectTab(TAB_LIBRARY, LibraryFragment(), R.drawable.ic_playlist_selected, mainBinding.tvPlaylist)
-        }
-
-        mainBinding.historyLayout.setOnClickListener {
-            selectTab(TAB_HISTORY, HomepageFragment(), R.drawable.ic_clock_selected, mainBinding.tvHistory)
-        }
-
-        mainBinding.profileLayout.setOnClickListener {
-            selectTab(TAB_PROFILE, LibraryFragment(), R.drawable.ic_profile_selected, mainBinding.tvProfile)
-        }
-
+        setBottomBarViewListener()
 
     }
 
-    private fun selectTab(tab: Int, fragment: Fragment, selectedImageId: Int, selectedTextView: TextView) {
+    private fun selectTab(
+        tab: Int,
+        fragment: Fragment,
+        selectedImageId: Int,
+        selectedTextView: TextView
+    ) {
         if (selectedTab != tab) {
             replaceFragment(fragment)
 
-            mainBinding.imgTopHome.visibility = View.GONE
-            mainBinding.imgTopPlaylist.visibility = View.GONE
-            mainBinding.imgTopHistory.visibility = View.GONE
-            mainBinding.imgTopProfile.visibility = View.GONE
+            imgTop.forEach { it.hide() }
 
-            mainBinding.imgHome.setImageResource(R.drawable.ic_home)
-            mainBinding.imgPlaylist.setImageResource(R.drawable.ic_playlist)
-            mainBinding.imgHistory.setImageResource(R.drawable.ic_history)
-            mainBinding.imgProfile.setImageResource(R.drawable.ic_profile)
-
-            mainBinding.tvHome.setTextColor(resources.getColor(R.color.stroke_letter))
-            mainBinding.tvPlaylist.setTextColor(resources.getColor(R.color.stroke_letter))
-            mainBinding.tvHistory.setTextColor(resources.getColor(R.color.stroke_letter))
-            mainBinding.tvProfile.setTextColor(resources.getColor(R.color.stroke_letter))
-
-            selectedTextView.setTextColor(resources.getColor(R.color.green_text))
-
-            when (tab) {
-                TAB_HOME -> {
-                    mainBinding.imgTopHome.visibility = View.VISIBLE
-                    mainBinding.imgHome.setImageResource(selectedImageId)
-                }
-                TAB_LIBRARY -> {
-                    mainBinding.imgTopPlaylist.visibility = View.VISIBLE
-                    mainBinding.imgPlaylist.setImageResource(selectedImageId)
-                }
-                TAB_HISTORY -> {
-                    mainBinding.imgTopHistory.visibility = View.VISIBLE
-                    mainBinding.imgHistory.setImageResource(selectedImageId)
-                }
-                TAB_PROFILE -> {
-                    mainBinding.imgTopProfile.visibility = View.VISIBLE
-                    mainBinding.imgProfile.setImageResource(selectedImageId)
-                }
+            imgBottomBar.forEachIndexed { index, imageView ->
+                imageView.setImageResourceCompat(drawableResources[index])
             }
+
+            tvBottomBarTab.forEach { it.setTextColorRes(R.color.stroke_letter) }
+
+            selectedTextView.setTextColorRes(R.color.green_text)
+
+            val imageViewToHideAndSet = when (tab) {
+                TAB_HOME -> mainBinding.imgTopHome to mainBinding.imgHome
+                TAB_LIBRARY -> mainBinding.imgTopPlaylist to mainBinding.imgPlaylist
+                TAB_HISTORY -> mainBinding.imgTopHistory to mainBinding.imgHistory
+                TAB_PROFILE -> mainBinding.imgTopProfile to mainBinding.imgProfile
+                else -> null to null
+            }
+
+            imageViewToHideAndSet.first?.hide()
+            imageViewToHideAndSet.second?.setImageResourceCompat(selectedImageId)
 
             selectedTab = tab
         }
     }
 
+    private fun setBottomBarViewListener() {
+        mainBinding.homeLayout.setOnClickListener {
+            selectTab(TAB_HOME, HomepageFragment(), R.drawable.ic_home_selected, mainBinding.tvHome)
+        }
+
+        mainBinding.playlistLayout.setOnClickListener {
+            selectTab(
+                TAB_LIBRARY,
+                LibraryFragment(),
+                R.drawable.ic_playlist_selected,
+                mainBinding.tvPlaylist
+            )
+        }
+
+        mainBinding.historyLayout.setOnClickListener {
+            selectTab(
+                TAB_HISTORY,
+                HomepageFragment(),
+                R.drawable.ic_clock_selected,
+                mainBinding.tvHistory
+            )
+        }
+
+        mainBinding.profileLayout.setOnClickListener {
+            selectTab(
+                TAB_PROFILE,
+                LibraryFragment(),
+                R.drawable.ic_profile_selected,
+                mainBinding.tvProfile
+            )
+        }
+    }
+
+    private fun View.hide() {
+        visibility = View.GONE
+    }
+
+    private fun TextView.setTextColorRes(colorRes: Int) {
+        setTextColor(context.getColor(colorRes))
+    }
+
+    private fun ImageView.setImageResourceCompat(resourceId: Int) {
+        setImageResource(resourceId)
+    }
 
     private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()

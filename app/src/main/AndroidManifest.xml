@@ -18,10 +18,10 @@
         android:theme="@style/AppTheme"
         >
         <activity
-            android:name=".ui.activity.MainActivity"
+            android:name=".ui.activity.SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.SplashActivity"
+            android:name=".ui.activity.MainActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
             android:theme="@style/AppTheme.Splash">
