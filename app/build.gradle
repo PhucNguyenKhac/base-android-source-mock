@@ -122,6 +122,7 @@ dependencies {
     implementation deps.androidx.navigation.fragment
     implementation deps.androidx.navigation.ui
     implementation deps.lottie
+    implementation deps.glide
 
     kapt deps.dagger.compiler
     kapt deps.dagger.androidProcessor
@@ -129,5 +130,6 @@ dependencies {
     implementation deps.dagger.androidSupport
     implementation deps.youtubeExtractor
     androidTestImplementation deps.junitExt
+
 
 }
