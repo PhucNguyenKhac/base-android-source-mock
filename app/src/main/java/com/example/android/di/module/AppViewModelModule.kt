@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.di.ViewModelFactory
 import com.example.android.di.ViewModelKey
+import com.example.android.ui.test.ChannelViewModel
 import com.example.android.viewmodel.LoginViewModel
 import dagger.Binds
 import dagger.Module
@@ -20,4 +21,9 @@ abstract class AppViewModelModule {
     @IntoMap
     @ViewModelKey(LoginViewModel::class)
     abstract fun bindLoginViewModel(logoutViewModel: LoginViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ChannelViewModel::class)
+    abstract fun bindChannelViewModel(channelViewModel: ChannelViewModel): ViewModel
 }

@@ -2,6 +2,7 @@ package com.example.external.di
 
 import android.app.Application
 import com.example.external.provider.LoginService
+import com.example.external.test.ChannelService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -21,8 +22,9 @@ const val Application = "Application"
 @Suppress("UNUSED")
 class NetworkModule() {
 
-    private var baseAuthUrl = "https://run.mocky.io/"
+//    private var baseAuthUrl = "https://run.mocky.io/"
 
+    private var baseAuthUrl = "https://www.googleapis.com/youtube/v3/"
     @Provides
     fun provideGson(): Gson {
         return GsonBuilder().create()
@@ -69,4 +71,8 @@ class NetworkModule() {
     @Provides
     fun provideLoginService(@Named(Application) retrofit: Retrofit): LoginService =
         retrofit.create(LoginService::class.java)
+
+    @Provides
+    fun provideChannelService(@Named(Application) retrofit: Retrofit): ChannelService =
+        retrofit.create(ChannelService::class.java)
 }

@@ -50,7 +50,10 @@ buildscript {
             'trustkit'               : '1.1.5',
             'certificateTransparency': '0.2.0',
             'lottie': '6.0.1',
-            'youtubeExtractor': '0.0.6'
+            'youtubeExtractor': '0.0.6',
+            'appcompatv7': '25.0.1',
+            'playServicesAuth': '20.6.0',
+            'easypermissions': '0.3.0',
     ]
 
     ext.deps = [
@@ -134,7 +137,12 @@ buildscript {
             'gson'     : "com.google.code.gson:gson:${versions.gson}"
         ],
         'lottie': "com.airbnb.android:lottie:${versions.lottie}",
-            'youtubeExtractor': "com.github.maxrave-dev:kotlin-youtubeExtractor:${versions.youtubeExtractor}"
+            'youtubeExtractor': "com.github.maxrave-dev:kotlin-youtubeExtractor:${versions.youtubeExtractor}",
+        'appcompatv7': "com.android.support:appcompat-v7:${versions.appcompatv7}",
+        'playServicesAuth': "com.google.android.gms:play-services-auth:${versions.playServicesAuth}",
+        'easypermissions': "pub.devrel:easypermissions:${versions.easypermissions}",
+        'glide': "com.github.bumptech.glide:glide:${versions.glide}"
+
     ]
 
     repositories {
