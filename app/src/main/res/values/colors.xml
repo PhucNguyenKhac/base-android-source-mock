@@ -8,6 +8,7 @@
     <color name="green">#42C83C</color>
     <color name="black">#000000</color>
     <color name="ALPHA_WHITE_60">#99FFFFFF</color>
+    <color name="grey">#FF333333</color>
 
 
     //text color
