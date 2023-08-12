@@ -34,5 +34,6 @@
 
     //seekbar bg
     <color name="seek_bar_bg">#A9A9A9</color>
+    <color name="little_black_color">#77000000</color>
 
 </resources>
