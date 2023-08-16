@@ -1,17 +1,15 @@
 package com.example.android.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.Fragment
+import androidx.appcompat.widget.Toolbar
+import androidx.navigation.findNavController
 import com.example.android.R
 import com.example.android.databinding.ActivityMainBinding
-import com.example.android.ui.fragment.bottom_nav.HomepageFragment
-import com.example.android.ui.fragment.bottom_nav.LibraryFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity(override val toolBar: Toolbar? = null) : BaseActivity() {
 
     private var selectedTab = 1
 
@@ -63,20 +61,16 @@ class MainActivity : AppCompatActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
 
-        replaceFragment(HomepageFragment())
-
         setBottomBarViewListener()
 
     }
 
     private fun selectTab(
         tab: Int,
-        fragment: Fragment,
         selectedImageId: Int,
         selectedTextView: TextView
     ) {
         if (selectedTab != tab) {
-            replaceFragment(fragment)
 
             imgTop.forEach { it.hide() }
 
@@ -105,34 +99,36 @@ class MainActivity : AppCompatActivity() {
 
     private fun setBottomBarViewListener() {
         mainBinding.homeLayout.setOnClickListener {
-            selectTab(TAB_HOME, HomepageFragment(), R.drawable.ic_home_selected, mainBinding.tvHome)
+            selectTab(TAB_HOME, R.drawable.ic_home_selected, mainBinding.tvHome)
+            findNavController(R.id.splash_nav_host_fragment).navigate(R.id.homepageFragment)
         }
 
         mainBinding.playlistLayout.setOnClickListener {
             selectTab(
                 TAB_LIBRARY,
-                LibraryFragment(),
                 R.drawable.ic_playlist_selected,
                 mainBinding.tvPlaylist
             )
+            findNavController(R.id.splash_nav_host_fragment).navigate(R.id.playlistFragment)
         }
 
         mainBinding.historyLayout.setOnClickListener {
             selectTab(
                 TAB_HISTORY,
-                HomepageFragment(),
                 R.drawable.ic_clock_selected,
                 mainBinding.tvHistory
             )
+            findNavController(R.id.splash_nav_host_fragment).navigate(R.id.historyFragment)
         }
 
         mainBinding.profileLayout.setOnClickListener {
             selectTab(
                 TAB_PROFILE,
-                LibraryFragment(),
                 R.drawable.ic_profile_selected,
                 mainBinding.tvProfile
             )
+            findNavController(R.id.splash_nav_host_fragment).navigate(R.id.profileFragment)
+
         }
     }
 
@@ -148,8 +144,5 @@ class MainActivity : AppCompatActivity() {
         setImageResource(resourceId)
     }
 
-    private fun replaceFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
-    }
 }
 

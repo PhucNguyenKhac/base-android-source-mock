@@ -21,4 +21,30 @@ interface ChannelService {
         @Query("order") order: String,
     ): SearchChannelEntity
 
+    @GET("search")
+    suspend fun searchTopHitVideo(
+        @Query("part") part: String,
+        @Query("key") key: String,
+        @Query("type") type: String,
+        @Query("q") q: String,
+        @Query("maxResults") maxResults: Int,
+        @Query("order") order: String,
+    ): SearchChannelEntity
+
+    @GET("playlists")
+    suspend fun getAlbumArtistInfo(
+        @Query("part") part: String,
+        @Query("key") key: String,
+        @Query("channelId") type: String,
+        @Query("maxResults") maxResults: Int,
+    ): SearchChannelEntity
+
+    @GET("search")
+    suspend fun getSongArtistInfo(
+        @Query("part") part: String,
+        @Query("key") key: String,
+        @Query("maxResults") maxResults: Int,
+        @Query("order") order: String,
+        @Query("channelId") channelId: String,
+    ): SearchChannelEntity
 }

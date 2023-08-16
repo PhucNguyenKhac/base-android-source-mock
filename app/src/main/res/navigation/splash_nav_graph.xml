@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/get_started_fragment"
+    app:startDestination="@id/homepageFragment"
     android:id="@+id/splash_nav_graph"
     >
 
@@ -38,8 +38,8 @@
         android:label="fragment_homepage"
         tools:layout="@layout/fragment_homepage" >
         <action
-            android:id="@+id/action_homepageFragment_to_playlistFragment"
-            app:destination="@id/playlistFragment" />
+            android:id="@+id/action_homepageFragment_to_arcticsFragment"
+            app:destination="@id/artistInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/playlistFragment"
@@ -47,9 +47,14 @@
         android:label="PlaylistFragment"
         tools:layout="@layout/fragment_library"/>
     <fragment
-        android:id="@+id/arcticsFragment"
-        android:name="com.example.android.ui.fragment.bottom_nav.ArcticsFragment"
-        android:label="ArcticsFragment" />
+        android:id="@+id/artistInfoFragment"
+        android:name="com.example.android.ui.fragment.bottom_nav.ArtistInfoFragment"
+        android:label="ArtistInfoFragment"
+        tools:layout="@layout/fragment_artist_info">
+        <action
+            android:id="@+id/action_artistInfoFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/lyricPageFragment"
         android:name="com.example.android.ui.fragment.playing_music.LyricPageFragment"
@@ -60,9 +65,20 @@
         android:name="com.example.android.ui.fragment.playing_music.MusicPageFragment"
         android:label="MusicPageFragment"
         tools:layout="@layout/fragment_music_page"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.android.ui.bottom_nav_fragment.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.android.ui.fragment.bottom_nav.HistoryFragment"
+        android:label="HistoryFragment"
+        tools:layout="@layout/fragment_history"/>
 
 
     <!--    <fragment-->
-<!--        android:id="@+id/progressSplashFragment"-->
-<!--        android:name=""/>-->
+    <!--        android:id="@+id/progressSplashFragment"-->
+    <!--        android:name=""/>-->
 </navigation>

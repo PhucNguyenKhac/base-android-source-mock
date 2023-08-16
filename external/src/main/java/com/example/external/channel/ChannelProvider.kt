@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.domain.di.DefaultDispatcher
 import com.example.domain.result.Result
 import com.example.domain.channel.ChannelRepository
+import com.example.domain.channel.ChannelResponseDomain
 import com.example.domain.channel.SearchChannelResponseDomain
 import com.example.external.provider.BaseProvider
 import com.google.firebase.firestore.FirebaseFirestore
@@ -19,14 +20,19 @@ class ChannelProvider @Inject constructor(
     private val channelService: ChannelService,
     @DefaultDispatcher private val defaultDispatcher: CoroutineDispatcher,
     @Named("snippet") private val snippet: String,
+    @Named("snippet_statistic") private val snippet2: String,
     @Named("apiKey") private val apiKey: String,
     @Named("channelType") private val channelType: String,
+    @Named("videoType") private val videoType: String,
     @Named("defaultItemsPerPage") private val defaultItemsPerPage: Int,
-    @Named("order") private val order: String
+    @Named("orderRelevance") private val orderRelevance: String,
+    @Named("orderViewCount") private val orderViewCount: String,
+    @Named("maxResults") private val maxResults: Int
 ) : ChannelRepository, BaseProvider(defaultDispatcher) {
 
     private val listChannelInfo = mutableListOf<SearchChannelEntity>()
 
+    // get artist in tab artist in homepage fragment
     override suspend fun searchChannelInfo(): Flow<Result<SearchChannelResponseDomain>> {
         return flow {
             emit(safeApiCall {
@@ -38,7 +44,7 @@ class ChannelProvider @Inject constructor(
                         channelType,
                         name,
                         defaultItemsPerPage,
-                        order
+                        orderRelevance
                     )
                     listChannelInfo.add(response)
                 }
@@ -66,6 +72,129 @@ class ChannelProvider @Inject constructor(
         }
     }
 
+    //get top view video ~ top hit song in homepage fragment
+    override suspend fun searchTopHitVideo(): Flow<Result<SearchChannelResponseDomain>> {
+        return flow {
+            emit(safeApiCall {
+                val response = channelService.searchTopHitVideo(
+                    snippet,
+                    apiKey,
+                    videoType,
+                    "music",
+                    1,
+                    orderViewCount
+                )
+                response
+            })
+        }.map {
+            when (it) {
+                is Result.Success -> {
+                    val responseItems = mutableListOf<SearchChannelResponseDomain.Items>()
+
+                    for (entity in it.data.items) {
+                        val item = SearchChannelResponseDomain.Items(
+                            id = entity.id.mapIdYtToDomain(entity.id),
+                            snippet = entity.snippet.mapSnippetYtToDomain(entity.snippet)
+                        )
+
+                        responseItems.addAll(listOf(item))
+                    }
+
+
+                    Result.Success(SearchChannelResponseDomain(items = responseItems))
+                }
+
+                else -> Result.Success(SearchChannelResponseDomain())
+            }
+        }
+    }
+
+    //get channel info to artist info fragment
+    override suspend fun getChannelInfo(channelId: String): Flow<Result<ChannelResponseDomain>> {
+        return flow {
+            emit(safeApiCall {
+                channelService.getInfoChannel(
+                    snippet2, channelId, apiKey
+                )
+            })
+        }.map {
+            when (it) {
+                is Result.Success -> {
+                    Result.Success(
+                        ChannelResponseDomain(
+                            items = it.data.mapChannelEntityListToDomain(it.data.items)
+                        )
+                    )
+                }
+
+                else -> Result.Success(ChannelResponseDomain())
+            }
+        }
+    }
+
+    //get all playlist of a channel ~ album in artist info fragment
+    override suspend fun getAlbumArtistInfo(channelId: String): Flow<Result<SearchChannelResponseDomain>> {
+        return flow {
+            emit(safeApiCall {
+                channelService.getAlbumArtistInfo(
+                    snippet, apiKey, channelId, 1
+                )
+            })
+        }.map {
+            when (it) {
+                is Result.Success -> {
+                    val responseItems = mutableListOf<SearchChannelResponseDomain.Items>()
+
+                    for (entity in it.data.items) {
+                        val item = SearchChannelResponseDomain.Items(
+                            id = entity.id.mapIdYtToDomain(entity.id),
+                            snippet = entity.snippet.mapSnippetYtToDomain(entity.snippet)
+                        )
+
+                        responseItems.addAll(listOf(item))
+                    }
+
+
+                    Result.Success(SearchChannelResponseDomain(items = responseItems))
+                }
+
+                else -> Result.Success(SearchChannelResponseDomain())
+            }
+        }
+    }
+
+    override suspend fun getSongArtistInfo(channelId: String): Flow<Result<SearchChannelResponseDomain>> {
+        return flow {
+            emit(safeApiCall {
+                val res = channelService.getSongArtistInfo(
+                    snippet, apiKey, 1, orderViewCount, channelId
+                )
+                Log.e("messi", res.items[0].id.toString())
+                res
+            })
+        }.map {
+            when (it) {
+                is Result.Success -> {
+                    val responseItems = mutableListOf<SearchChannelResponseDomain.Items>()
+
+                    for (entity in it.data.items) {
+                        val item = SearchChannelResponseDomain.Items(
+                            id = entity.id.mapIdYtToDomain(entity.id),
+                            snippet = entity.snippet.mapSnippetYtToDomain(entity.snippet)
+                        )
+
+                        responseItems.addAll(listOf(item))
+                    }
+
+
+                    Result.Success(SearchChannelResponseDomain(items = responseItems))
+                }
+
+                else -> Result.Success(SearchChannelResponseDomain())
+            }
+        }
+    }
+
     private suspend fun getData(): List<String> {
         val db = FirebaseFirestore.getInstance()
         val artistNames = mutableListOf<String>()
@@ -78,7 +207,6 @@ class ChannelProvider @Inject constructor(
                     artistNames.add(it)
                 }
             }
-            Log.e("error", artistNames.toString())
         } catch (exception: Exception) {
             Log.e("error", "Error getting documents.", exception)
         }

@@ -1,9 +1,9 @@
 package com.example.domain.channel
 
 data class ThumbnailsYtDomain(
-    val high: High? = null
+    val medium: Medium? = null
 ) {
-    data class High(
+    data class Medium(
         val url: String? = null
     )
 }

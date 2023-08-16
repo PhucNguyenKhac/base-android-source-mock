@@ -4,19 +4,19 @@ import com.example.domain.channel.ThumbnailsYtDomain
 import com.google.gson.annotations.SerializedName
 
 data class ThumbnailsYt(
-    @SerializedName("high")
-    val high: High
+    @SerializedName("medium")
+    val medium: Medium
 ) {
-    data class High(
+    data class Medium(
         @SerializedName("url")
         val url: String
     )
 
     fun mapThumbnailsYtToDomain(thumbnailsYt: ThumbnailsYt): ThumbnailsYtDomain {
         return ThumbnailsYtDomain(
-            high = thumbnailsYt.high.let { high ->
-                ThumbnailsYtDomain.High(
-                    url = high.url
+            medium = thumbnailsYt.medium.let { medium ->
+                ThumbnailsYtDomain.Medium(
+                    url = medium.url
                 )
             }
         )

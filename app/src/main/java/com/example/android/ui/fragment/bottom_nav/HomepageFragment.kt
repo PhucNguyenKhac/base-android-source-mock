@@ -2,26 +2,37 @@ package com.example.android.ui.fragment.bottom_nav
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.android.R
 import com.example.android.databinding.FragmentHomepageBinding
 import com.example.android.adapter.FragmentPageAdapter
-import com.example.android.adapter.SongAdapter
-import com.example.android.model.Song
+import com.example.android.ui.fragment.BaseFragment
+import com.example.android.viewmodel.ChannelViewModel
 import com.google.android.material.tabs.TabLayout
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
 import kotlinx.android.synthetic.main.login_activity.view.*
+import javax.inject.Inject
 
 @Suppress("DEPRECATION")
-class HomepageFragment : Fragment() {
+class HomepageFragment : BaseFragment(), HasAndroidInjector {
+
+    @Inject
+    internal lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
     private val homepageBinding: FragmentHomepageBinding by lazy {
         FragmentHomepageBinding.inflate(layoutInflater)
+    }
+
+    private val viewModel by lazy {
+        ViewModelProvider(this, viewModelFactory).get(ChannelViewModel::class.java)
     }
 
     private lateinit var adapter: FragmentPageAdapter
@@ -34,6 +45,14 @@ class HomepageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        initTabLayoutUI()
+        displayListTodayHits()
+
+        // Inflate the layout for this fragment
+        return homepageBinding.root
+    }
+
+    private fun initTabLayoutUI() {
         adapter = FragmentPageAdapter(requireFragmentManager(), lifecycle)
         homepageBinding.tabLayout.addTab(homepageBinding.tabLayout.newTab().setText("Artists"))
         homepageBinding.tabLayout.addTab(homepageBinding.tabLayout.newTab().setText("Album"))
@@ -81,32 +100,6 @@ class HomepageFragment : Fragment() {
                 homepageBinding.tabLayout.selectTab(homepageBinding.tabLayout.getTabAt(position))
             }
         })
-
-        displayListTodayHits()
-
-        // Inflate the layout for this fragment
-        return homepageBinding.root
-    }
-
-    private fun displayListTodayHits() {
-        val layout = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        homepageBinding.rcvData.layoutManager = layout
-        val adapter = SongAdapter(getListSongs())
-        homepageBinding.rcvData.adapter = adapter
-    }
-
-    private fun getListSongs(): List<Song> {
-        val list = mutableListOf<Song>()
-
-        list.add(Song(R.drawable.img_song_test, "ArTi Untuk Cinta", "Arsy Widianto, Tiar Anini"))
-        list.add(Song(R.drawable.img_song_test, "ArTi Untuk Cinta", "Arsy Widianto, Tiar Anini"))
-        list.add(Song(R.drawable.img_song_test, "ArTi Untuk Cinta", "Arsy Widianto, Tiar Anini"))
-        list.add(Song(R.drawable.img_song_test, "ArTi Untuk Cinta", "Arsy Widianto, Tiar Anini"))
-        list.add(Song(R.drawable.img_song_test, "ArTi Untuk Cinta", "Arsy Widianto, Tiar Anini"))
-        list.add(Song(R.drawable.img_song_test, "ArTi Untuk Cinta", "Arsy Widianto, Tiar Anini"))
-        list.add(Song(R.drawable.img_song_test, "ArTi Untuk Cinta", "Arsy Widianto, Tiar Anini"))
-
-        return list
     }
 
     @SuppressLint("InflateParams")
@@ -140,5 +133,20 @@ class HomepageFragment : Fragment() {
             }
         }
     }
+
+    private fun displayListTodayHits() {
+        val layout = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        homepageBinding.rcvData.layoutManager = layout
+//        val adapter = SongAdapter()
+//        homepageBinding.rcvData.adapter = adapter
+
+//        adapter.submitList(getListSongs())
+
+//        viewModel.topHitSong.observe(viewLifecycleOwner){ songList ->
+//            adapter.submitList(songList)
+//        }
+    }
+
+    override fun androidInjector(): AndroidInjector<Any> = androidInjector
 
 }

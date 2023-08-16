@@ -13,6 +13,10 @@ class AppConstantModule {
     fun provideSnippetConstant(): String = "snippet"
 
     @Provides
+    @Named("snippet_statistic")
+    fun provideSnippetStatisticsConstant(): String = "snippet,statistics"
+
+    @Provides
     @Named("apiKey")
     fun provideApiKeyConstant(): String = "AIzaSyBV7RM1z-3NeAxn8-jZktdYqLT5TqrbNXI"
 
@@ -21,10 +25,35 @@ class AppConstantModule {
     fun provideChannelTypeConstant(): String = "channel"
 
     @Provides
+    @Named("videoType")
+    fun provideVideoConstant(): String = "video"
+
+    @Provides
     @Named("defaultItemsPerPage")
     fun provideDefaultItemsPerPageConstant(): Int = 1
 
     @Provides
-    @Named("order")
-    fun provideOrderConstant(): String = "relevance"
+    @Named("orderRelevance")
+    fun provideOrderRelevanceConstant(): String = "relevance"
+
+    @Provides
+    @Named("orderViewCount")
+    fun provideOrderViewCountConstant(): String = "viewCount"
+
+    @Provides
+    @Named("maxResults")
+    fun provideMaxResultsConstant(): Int = 10
+
+    @Provides
+    @Named("songType1")
+    fun provideSongType1Constant(): Int = 0
+
+    @Provides
+    @Named("songType2")
+    fun provideSongType2Constant(): Int = 1
+
+    @Provides
+    @Named("songType3")
+    fun provideSongType3Constant(): Int = 2
+
 }

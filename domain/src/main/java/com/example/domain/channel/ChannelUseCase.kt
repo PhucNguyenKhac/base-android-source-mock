@@ -9,4 +9,17 @@ class ChannelUseCase @Inject constructor(
 ) {
     suspend operator fun invoke(): Flow<Result<SearchChannelResponseDomain>> =
         channelRepository.searchChannelInfo()
+
+    suspend fun getChannelInfo(channelId: String): Flow<Result<ChannelResponseDomain>> =
+        channelRepository.getChannelInfo(channelId)
+
+    suspend fun searchHitVideoInfo(): Flow<Result<SearchChannelResponseDomain>> =
+        channelRepository.searchTopHitVideo()
+
+    suspend fun getAlbumArtistInfo(channelId: String): Flow<Result<SearchChannelResponseDomain>> =
+        channelRepository.getAlbumArtistInfo(channelId)
+
+    suspend fun getSongArtistInfo(channelId: String): Flow<Result<SearchChannelResponseDomain>> =
+        channelRepository.getSongArtistInfo(channelId)
+
 }

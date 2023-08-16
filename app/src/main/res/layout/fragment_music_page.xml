@@ -54,12 +54,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@drawable/artics_profile"
-            app:shapeAppearanceOverlay="@style/RoundCornerMusicPage" />
+            android:src="@drawable/image_not_available"
+            app:shapeAppearanceOverlay="@style/roundCornerMusicPage" />
     </FrameLayout>
 
     <TextView
-        android:id="@+id/tv_singer_name"
+        android:id="@+id/tvSongName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/definite_dimen_40"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@id/artist_img_frame" />
 
     <TextView
-        android:id="@+id/tv_first_name"
+        android:id="@+id/tvArtistName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/definite_dimen_40"
@@ -82,7 +82,7 @@
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/text_size_xnormal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_singer_name" />
+        app:layout_constraintTop_toBottomOf="@id/tvSongName" />
 
     <ImageView
         android:id="@+id/icHeart"
@@ -92,8 +92,8 @@
         android:src="@drawable/ic_heart"
         app:layout_constraintVertical_bias="0.5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tv_singer_name"
-        app:layout_constraintBottom_toBottomOf="@id/tv_first_name"
+        app:layout_constraintTop_toTopOf="@id/tvSongName"
+        app:layout_constraintBottom_toBottomOf="@id/tvArtistName"
         tools:ignore="ContentDescription" />
 
     <androidx.appcompat.widget.AppCompatSeekBar
@@ -105,7 +105,7 @@
         android:layout_marginEnd="@dimen/definite_dimen_30"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_first_name" />
+        app:layout_constraintTop_toBottomOf="@id/tvArtistName" />
 
     <TextView
         android:id="@+id/tvStartDuration"
@@ -158,7 +158,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/previous"
+            android:src="@drawable/ic_previous"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -174,7 +174,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/next"
+            android:src="@drawable/ic_next"
             tools:ignore="ContentDescription" />
 
         <ImageView
@@ -182,7 +182,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/shuffle"
+            android:src="@drawable/ic_shuffle"
             tools:ignore="ContentDescription" />
     </LinearLayout>
 

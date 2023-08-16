@@ -1,24 +1,36 @@
 package com.example.android.viewmodel
 
-import android.util.Log
+import android.content.Context
+import android.util.SparseArray
+import androidx.core.util.forEach
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.android.adapter.SongViewType
+import com.example.android.model.Album
 import com.example.android.model.Artist
+import com.example.android.model.Song
+import com.example.domain.channel.ChannelResponseDomain
 import javax.inject.Inject
 import com.example.domain.result.Result
 import com.example.domain.channel.ChannelUseCase
 import com.example.domain.channel.SearchChannelResponseDomain
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.FirebaseFirestore
+import com.maxrave.kotlinyoutubeextractor.State
+import com.maxrave.kotlinyoutubeextractor.YTExtractor
+import com.maxrave.kotlinyoutubeextractor.YtFile
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
 class ChannelViewModel @Inject constructor(
     private val channelUseCase: ChannelUseCase,
-    private val db: FirebaseFirestore
+    private val db: FirebaseFirestore,
+    private val context: Context
 ) : ViewModel() {
     private val mutableIsLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean>
@@ -28,15 +40,29 @@ class ChannelViewModel @Inject constructor(
     val channelResult: LiveData<Boolean>
         get() = mutableChannelResult
 
-    private val _channel = MutableLiveData<SearchChannelResponseDomain>()
+    private val _channel = MutableLiveData<ChannelResponseDomain>()
     val channel = _channel
+
+    private val _topHitSong = MutableLiveData<List<Song>>()
+    val topHitSong = _topHitSong
 
     private val _artistList = MutableLiveData<List<Artist>>()
     val artistList = _artistList
 
+    private val _songArtistInfoList = MutableLiveData<List<Song>>()
+    val songArtistInfoList = _songArtistInfoList
+
+    private val _albumArtistInfoList = MutableLiveData<List<Album>>()
+    val albumArtistInfoList = _albumArtistInfoList
+
     private val _artistsFromFirestore = mutableListOf<Artist>()
 
-    private val convertList = mutableListOf<Artist>()
+    private val convertArtistList = mutableListOf<Artist>()
+    private val convertTopHitList = mutableListOf<Song>()
+
+    //    private val convertPlaylistList = mutableListOf<Playlist>()
+    private val convertAlbumArtistInfoList = mutableListOf<Album>()
+    private val convertSongArtistInfoList = mutableListOf<Song>()
 
     private fun startLoading() {
         mutableIsLoading.postValue(true)
@@ -47,11 +73,12 @@ class ChannelViewModel @Inject constructor(
     }
 
     init {
-        getInfo()
+        getSearchChannelInfo()
         loadArtistsFromFirestore()
+//        searchTopHitVideo()
     }
 
-    private fun getInfo() {
+    private fun getSearchChannelInfo() {
         viewModelScope.launch {
             val documentArtistCount = getDocumentCountInCollection("Artist")
             channelUseCase.invoke()
@@ -65,17 +92,97 @@ class ChannelViewModel @Inject constructor(
                             if (_artistsFromFirestore.isEmpty()) {
                                 _artistList.value = convertToArtistList(it.data)
                                 saveDataToFirestore(it.data)
-                                Log.e("messi", "get from if")
                             } else if (_artistsFromFirestore.size < documentArtistCount) {
                                 deleteCollection("SearchChannel")
                                 _artistList.value = convertToArtistList(it.data)
                                 saveDataToFirestore(it.data)
-                                Log.e("messi", "adding missing artists")
                             } else {
                                 _artistList.value = _artistsFromFirestore
-                                Log.e("messi", "get from else")
 
                             }
+                        }
+                        else -> mutableChannelResult.value = false
+                    }
+                }
+        }
+    }
+
+    fun getChannelInfo(channelId: String) {
+        viewModelScope.launch {
+            channelUseCase.getChannelInfo(channelId)
+                .onStart {
+                    startLoading()
+                }.collect {
+                    stopLoading()
+                    when (it) {
+                        is Result.Success -> {
+                            mutableChannelResult.value = true
+                            _channel.value = it.data
+                        }
+                        else -> mutableChannelResult.value = false
+                    }
+                }
+        }
+    }
+
+    fun getSongArtistInfo(channelId: String) {
+        viewModelScope.launch {
+            channelUseCase.getSongArtistInfo(channelId)
+                .onStart {
+                    startLoading()
+                }.collect {
+                    stopLoading()
+                    when (it) {
+                        is Result.Success -> {
+                            mutableChannelResult.value = true
+                            convertToSongList(
+                                it.data,
+                                mutableListOf(),
+                                SongViewType.SONG_TYPE_1
+                            ) { convertedList ->
+                                _songArtistInfoList.value = convertedList
+                            }
+
+                        }
+                        else -> mutableChannelResult.value = false
+                    }
+                }
+        }
+    }
+
+//    private fun searchTopHitVideo() {
+//        viewModelScope.launch {
+//            channelUseCase.searchHitVideoInfo()
+//                .onStart {
+//                    startLoading()
+//                }.collect {
+//                    stopLoading()
+//                    when (it) {
+//                        is Result.Success -> {
+//                            mutableChannelResult.value = true
+//                            _topHitSong.value = convertToSongList(
+//                                it.data,
+//                                convertTopHitList,
+//                                SongViewType.SONG_TYPE_3
+//                            )
+//                        }
+//                        else -> mutableChannelResult.value = false
+//                    }
+//                }
+//        }
+//    }
+
+    fun getAlbumArtistInfo(channelId: String) {
+        viewModelScope.launch {
+            channelUseCase.getAlbumArtistInfo(channelId)
+                .onStart {
+                    startLoading()
+                }.collect {
+                    stopLoading()
+                    when (it) {
+                        is Result.Success -> {
+                            mutableChannelResult.value = true
+                            _albumArtistInfoList.value = convertToAlbumList(it.data)
                         }
                         else -> mutableChannelResult.value = false
                     }
@@ -101,14 +208,50 @@ class ChannelViewModel @Inject constructor(
         searchChannelResponseDomain.items?.forEach { item ->
             val snippet = item.snippet
             if (snippet != null) {
-                val image = snippet.thumbnails?.high?.url.toString()
+                val image = snippet.thumbnails?.medium?.url.toString()
                 val name = snippet.title.toString()
                 val description = snippet.description.toString()
+                val channelId = snippet.channelId.toString()
 
-                convertList.add(Artist(image, name, description))
+                convertArtistList.add(Artist(image, name, description, channelId))
             }
         }
-        return convertList
+        return convertArtistList
+    }
+
+    private fun convertToSongList(
+        searchChannelResponseDomain: SearchChannelResponseDomain,
+        list: MutableList<Song>,
+        viewType: Int,
+        callback: (List<Song>) -> Unit
+    ) {
+        searchChannelResponseDomain.items?.forEach { item ->
+            val snippet = item.snippet
+            if (snippet != null) {
+                val image = snippet.thumbnails?.medium?.url.toString()
+                val name = snippet.title.toString()
+                val description = snippet.description.toString()
+                getVideoUrl(item.id?.videoId.toString()) { url ->
+                    list.add(Song(viewType, image, name, description, url))
+                    callback(list)
+                }
+            }
+        }
+    }
+
+    private fun convertToAlbumList(searchChannelResponseDomain: SearchChannelResponseDomain): List<Album> {
+        searchChannelResponseDomain.items?.forEach { item ->
+            val snippet = item.snippet
+            if (snippet != null) {
+                val image = snippet.thumbnails?.medium?.url.toString()
+                val name = snippet.title.toString()
+                val publishedAt = snippet.publishedAt.toString()
+                val year = publishedAt.substring(0, 4)
+
+                convertAlbumArtistInfoList.add(Album(image, name, year))
+            }
+        }
+        return convertAlbumArtistInfoList
     }
 
     private fun saveDataToFirestore(data: SearchChannelResponseDomain) {
@@ -121,7 +264,7 @@ class ChannelViewModel @Inject constructor(
                     "title" to snippet.title,
                     "description" to snippet.description,
                     "customUrl" to snippet.customUrl,
-                    "thumbnails" to snippet.thumbnails?.high?.url,
+                    "thumbnails" to snippet.thumbnails?.medium?.url,
                     "publishedAt" to snippet.publishedAt,
                     "country" to snippet.country,
                     "channelId" to snippet.channelId
@@ -141,8 +284,9 @@ class ChannelViewModel @Inject constructor(
                     val imageArtist = document.data["thumbnails"].toString()
                     val nameArtist = document.data["title"].toString()
                     val descriptionArtist = document.data["description"].toString()
+                    val channelId = document.data["channelId"].toString()
 
-                    val artist = Artist(imageArtist, nameArtist, descriptionArtist)
+                    val artist = Artist(imageArtist, nameArtist, descriptionArtist, channelId)
                     _artistsFromFirestore.add(artist)
                 }
             }
@@ -157,8 +301,28 @@ class ChannelViewModel @Inject constructor(
         val querySnapshot = artistsCollection.get().await()
 
         documentCount = querySnapshot.size()
-        Log.e("messi", documentCount.toString())
         return documentCount
     }
 
+    private fun getVideoUrl(videoId: String, callback: (String) -> Unit) {
+        val yt = YTExtractor(con = context, CACHING = true, LOGGING = true, retryCount = 3)
+
+        CoroutineScope(Dispatchers.Main).launch {
+            yt.extract(videoId)
+            var url = ""
+            if (yt.state == State.SUCCESS) {
+                val ytFiles = yt.getYTFiles()
+//                ytFiles?.forEach { key, value ->
+//                    url = value.url.toString()
+//                }
+//                callback(url)
+                url = ytFiles?.get(0)?.url.toString()
+                callback(url)
+            } else {
+                callback("")
+            }
+
+        }
+
+    }
 }

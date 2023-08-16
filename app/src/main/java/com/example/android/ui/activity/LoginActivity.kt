@@ -17,10 +17,10 @@ import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
-import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 class LoginActivity : BaseActivity(), HasAndroidInjector {
     private lateinit var binding: LoginActivityBinding
@@ -64,7 +64,7 @@ class LoginActivity : BaseActivity(), HasAndroidInjector {
     private fun setUpViews() {
         binding.signIn.setOnClickListener {
             //If your YouTube link is "https://www.youtube.com/watch?v=IDwytT0wFRM" so this videoId is "IDwytT0wFRM"
-            val videoId = "3Wk9ZoiJtiM"
+            val videoId = "11XkLOIsLHI"
             val yt = YTExtractor(con = this, CACHING = true, LOGGING = true, retryCount = 3)
             // CACHING and LOGGING are 2 optional params. LOGGING is for showing Log and CACHING is for saving SignatureCipher to optimize extracting time (not recommend CACHING to extract multiple videos because it causes HTTP 403 Error)
             // retryCount is for retrying when extract fail (default is 1)
@@ -77,7 +77,7 @@ class LoginActivity : BaseActivity(), HasAndroidInjector {
                     ytFiles = yt.getYTFiles()
                     videoMeta = yt.getVideoMeta()
                     ytFiles?.forEach { key, value ->
-                        Log.d("#PhucNK1 ", value.url ?: "")
+                        Log.d("#PhucNK1 3 ", value.url ?: "")
                     }
 
                 }

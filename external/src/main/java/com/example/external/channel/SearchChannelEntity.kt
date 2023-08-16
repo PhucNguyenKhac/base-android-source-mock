@@ -11,6 +11,9 @@ data class SearchChannelEntity(
 ) {
     data class Items(
 
+        @SerializedName("id")
+        val id: IdYt,
+
         @SerializedName("snippet")
         val snippet: SnippetYt
 
@@ -19,6 +22,7 @@ data class SearchChannelEntity(
     fun mapSearchChannelEntityListToDomain(entityList: List<Items>): List<SearchChannelResponseDomain.Items> {
         return entityList.map { entity ->
             SearchChannelResponseDomain.Items(
+                id = entity.id.mapIdYtToDomain(entity.id),
                 snippet = entity.snippet.mapSnippetYtToDomain(entity.snippet)
             )
         }

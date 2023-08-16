@@ -1,6 +1,9 @@
 package com.example.android
 
 import android.app.Application
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.os.Build
 import com.example.android.di.DaggerAppComponent
 import com.google.firebase.FirebaseApp
 import dagger.android.DispatchingAndroidInjector
@@ -21,7 +24,32 @@ open class Application : Application(), HasAndroidInjector {
             .application(this)
             .build()
             .inject(this)
+        createChannelNotification()
+    }
+
+    private fun createChannelNotification() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // Create the channel
+            val channel = NotificationChannel(
+                "channel_id",
+                "Channel Name",
+                NotificationManager.IMPORTANCE_DEFAULT
+            )
+
+            // Configure the channel
+            channel.description = "Channel Description"
+            channel.setSound(null, null)
+
+            // Register the channel with the system
+            val notificationManager: NotificationManager = getSystemService(
+                NotificationManager::class.java
+            )
+            notificationManager.createNotificationChannel(channel)
+        }
+
     }
 
     override fun androidInjector() = dispatchingAndroidInjector
+
 }
+

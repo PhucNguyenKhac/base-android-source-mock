@@ -3,7 +3,7 @@ package com.example.android.di.module
 import com.example.android.di.scope.ActivityScoped
 import com.example.android.ui.activity.MainActivity
 import com.example.android.ui.activity.LoginActivity
-import com.example.android.ui.test.ChannelActivity
+import com.example.android.ui.activity.MusicActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -21,5 +21,6 @@ abstract class AppActivityModule {
 
     @ActivityScoped
     @ContributesAndroidInjector
-    internal abstract fun bindChannelActivity(): ChannelActivity
+    internal abstract fun bindMusicActivity(): MusicActivity
+
 }

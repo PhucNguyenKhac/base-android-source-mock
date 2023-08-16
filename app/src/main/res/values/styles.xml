@@ -36,7 +36,7 @@
         <item name="android:textSize">20sp</item>
     </style>
 
-    <style name="RoundCorner" parent="">
+    <style name="roundCorner" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopLeft">@dimen/definite_dimen_0</item>
         <item name="cornerSizeTopRight">@dimen/definite_dimen_0</item>
@@ -45,12 +45,20 @@
         <item name="backgroundColor">#FF333333</item>
     </style>
 
-    <style name="RoundCornerMusicPage" parent="">
+    <style name="roundCornerMusicPage" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSizeTopLeft">@dimen/definite_dimen_36</item>
         <item name="cornerSizeTopRight">@dimen/definite_dimen_36</item>
         <item name="cornerSizeBottomLeft">@dimen/definite_dimen_36</item>
         <item name="cornerSizeBottomRight">@dimen/definite_dimen_36</item>
+    </style>
+
+    <style name="roundCornerAlbum" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/definite_dimen_20</item>
+        <item name="cornerSizeTopRight">@dimen/definite_dimen_20</item>
+        <item name="cornerSizeBottomLeft">@dimen/definite_dimen_20</item>
+        <item name="cornerSizeBottomRight">@dimen/definite_dimen_20</item>
     </style>
 
 </resources>
