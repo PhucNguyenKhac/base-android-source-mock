@@ -17,8 +17,8 @@ data class SnippetYt(
     @SerializedName("publishedAt")
     val publishedAt: String,
 
-//    @SerializedName("thumbnails")
-//    val thumbnails: ThumbnailsYt,
+    @SerializedName("thumbnails")
+    val thumbnails: ThumbnailsYt,
 
     @SerializedName("country")
     val country: String
@@ -30,7 +30,7 @@ data class SnippetYt(
             description = snippet.description,
             customUrl = snippet.customUrl,
             publishedAt = snippet.publishedAt,
-//            thumbnails = snippet.thumbnails.mapThumbnailsYtToDomain(snippet.thumbnails),
+            thumbnails = snippet.thumbnails.mapThumbnailsYtToDomain(snippet.thumbnails),
             country = snippet.country
         )
     }

@@ -7,6 +7,7 @@ import com.example.domain.result.data
 import com.example.domain.test.ChannelRepository
 import com.example.domain.test.ChannelResponseDomain
 import com.example.external.provider.BaseProvider
+import com.google.firebase.ktx.Firebase
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
@@ -21,10 +22,9 @@ class ChannelProvider @Inject constructor(
     override suspend fun getInfo(): Flow<Result<ChannelResponseDomain>> {
         return flow {
             emit(safeApiCall {
-//                val response = channelService.getInfo("snippet", "UCkXmLjEr95LVtGuIm3l2dPg&","AIzaSyBV7RM1z-3NeAxn8-jZktdYqLT5TqrbNXI")
-//                channelService.getInfo()
-                val response = channelService.getInfo()
-                Log.e("api response", response.toString())
+                val response = channelService.getInfo("snippet", "UCkXmLjEr95LVtGuIm3l2dPg","AIzaSyBV7RM1z-3NeAxn8-jZktdYqLT5TqrbNXI")
+//                val response = channelService.getInfo()
+//                Log.e("api response", response.toString())
                 response
             })
         }.map {
@@ -42,5 +42,7 @@ class ChannelProvider @Inject constructor(
             }
         }
     }
+
+
 
 }

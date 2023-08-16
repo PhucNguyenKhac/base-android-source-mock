@@ -18,12 +18,13 @@
         android:theme="@style/AppTheme"
         >
         <activity
-            android:name=".ui.activity.SplashActivity"
+            android:name=".ui.activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.test.ChannelActivity"
+            android:name=".ui.activity.SplashActivity"
             android:configChanges="orientation|screenSize"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

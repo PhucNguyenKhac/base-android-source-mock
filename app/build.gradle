@@ -123,6 +123,7 @@ dependencies {
     implementation deps.androidx.navigation.ui
     implementation deps.lottie
     implementation deps.glide
+    implementation deps.firestore
 
     kapt deps.dagger.compiler
     kapt deps.dagger.androidProcessor

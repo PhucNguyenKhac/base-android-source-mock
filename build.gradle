@@ -54,6 +54,7 @@ buildscript {
             'appcompatv7': '25.0.1',
             'playServicesAuth': '20.6.0',
             'easypermissions': '0.3.0',
+            'firestore':'24.7.0'
     ]
 
     ext.deps = [
@@ -141,7 +142,8 @@ buildscript {
         'appcompatv7': "com.android.support:appcompat-v7:${versions.appcompatv7}",
         'playServicesAuth': "com.google.android.gms:play-services-auth:${versions.playServicesAuth}",
         'easypermissions': "pub.devrel:easypermissions:${versions.easypermissions}",
-        'glide': "com.github.bumptech.glide:glide:${versions.glide}"
+        'glide': "com.github.bumptech.glide:glide:${versions.glide}",
+        'firestore':"com.google.firebase:firebase-firestore-ktx:${versions.firestore}"
 
     ]
 

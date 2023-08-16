@@ -1,7 +1,5 @@
 package com.example.domain.test
 
-import com.google.gson.annotations.SerializedName
-
 data class ChannelResponseDomain(
     val items: List<Items>? = null
 ) {
