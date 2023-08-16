@@ -34,4 +34,10 @@
     <string name="name_of_album">Manusia</string>
     <string name="year_album_release">2022</string>
     <string name="song_name">Hati-Hati di Jalan</string>
+
+    <string name="tv_now_playing">Now Playing</string>
+    <string name="tv_singer_name">Sisa Rasa</string>
+    <string name="tv_first_name">Mahalini</string>
+    <string name="tv_lyric_up">Lyrics</string>
+
 </resources>

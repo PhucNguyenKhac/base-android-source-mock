@@ -32,4 +32,8 @@
     //bottom bar background color
     <color name="bottom_nav_background">#333333</color>
 
+    //seekbar bg
+    <color name="seek_bar_bg">#A9A9A9</color>
+    <color name="little_black_color">#77000000</color>
+
 </resources>
