@@ -1,13 +1,13 @@
 package com.example.android.di.module
 
 import com.example.android.di.scope.FragmentScoped
-import com.example.android.ui.GetStartedFragment
-import com.example.android.ui.bottom_nav_fragment.ArcticsFragment
-import com.example.android.ui.bottom_nav_fragment.ArtistFragment
-import com.example.android.ui.bottom_nav_fragment.HomepageFragment
-import com.example.android.ui.bottom_nav_fragment.LibraryFragment
-import com.example.android.ui.login.LoginFragment
-import com.example.android.ui.login.RegisterFragment
+import com.example.android.ui.fragment.bottom_nav.ArcticsFragment
+import com.example.android.ui.fragment.bottom_nav.ArtistFragment
+import com.example.android.ui.fragment.bottom_nav.HomepageFragment
+import com.example.android.ui.fragment.bottom_nav.LibraryFragment
+import com.example.android.ui.fragment.login.*
+import com.example.android.ui.fragment.playing_music.LyricPageFragment
+import com.example.android.ui.fragment.playing_music.MusicPageFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -29,6 +29,14 @@ internal abstract class AppFragmentModule {
 
     @FragmentScoped
     @ContributesAndroidInjector
+    internal abstract fun contributeSignUpFragment(): SignUpFragment
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    internal abstract fun contributeContinueFragment(): ContinueFragment
+
+    @FragmentScoped
+    @ContributesAndroidInjector
     internal abstract fun contributeHomepageFragment(): HomepageFragment
 
     @FragmentScoped
@@ -42,5 +50,12 @@ internal abstract class AppFragmentModule {
     @FragmentScoped
     @ContributesAndroidInjector
     internal abstract fun contributeArcticsFragment(): ArcticsFragment
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    internal abstract fun contributeLyricPageFragment(): LyricPageFragment
+    @FragmentScoped
+    @ContributesAndroidInjector
+    internal abstract fun contributeMusicPageFragment(): MusicPageFragment
 }
 

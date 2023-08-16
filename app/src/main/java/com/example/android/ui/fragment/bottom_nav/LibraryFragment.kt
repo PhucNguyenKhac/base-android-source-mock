@@ -1,4 +1,4 @@
-package com.example.android.ui.bottom_nav_fragment
+package com.example.android.ui.fragment.bottom_nav
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

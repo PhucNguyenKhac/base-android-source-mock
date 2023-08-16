@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.android.R
 import com.example.android.databinding.ActivityMainBinding
-import com.example.android.ui.bottom_nav_fragment.HomepageFragment
-import com.example.android.ui.bottom_nav_fragment.LibraryFragment
+import com.example.android.ui.fragment.bottom_nav.HomepageFragment
+import com.example.android.ui.fragment.bottom_nav.LibraryFragment
 
 class MainActivity : AppCompatActivity() {
 

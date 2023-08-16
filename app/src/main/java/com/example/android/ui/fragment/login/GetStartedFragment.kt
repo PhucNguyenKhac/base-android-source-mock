@@ -1,11 +1,10 @@
-package com.example.android.ui
+package com.example.android.ui.fragment.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import com.example.android.R
 import com.example.android.databinding.GetStartedFragmentBinding
 import dagger.android.support.DaggerFragment
 

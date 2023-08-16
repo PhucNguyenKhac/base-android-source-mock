@@ -5,7 +5,7 @@ import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
-import com.example.android.ui.LoadingFragment
+import com.example.android.ui.fragment.LoadingFragment
 import javax.inject.Inject
 
 abstract class BaseActivity : AppCompatActivity() {

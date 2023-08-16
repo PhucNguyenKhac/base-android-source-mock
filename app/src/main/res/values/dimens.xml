@@ -16,15 +16,21 @@
     <dimen name="definite_dimen_24">24dp</dimen>
     <dimen name="definite_dimen_30">30dp</dimen>
     <dimen name="definite_dimen_32">32dp</dimen>
-    <dimen name="definite_dimen_35">35dp</dimen>
+    <dimen name="definite_dimen_34">34dp</dimen>
+    <dimen name="definite_dimen_36">36dp</dimen>
+    <dimen name="definite_dimen_38">38dp</dimen>
     <dimen name="definite_dimen_40">40dp</dimen>
+    <dimen name="definite_dimen_44">44dp</dimen>
     <dimen name="definite_dimen_48">48dp</dimen>
     <dimen name="definite_dimen_50">50dp</dimen>
     <dimen name="definite_dimen_56">56dp</dimen>
     <dimen name="definite_dimen_60">60dp</dimen>
     <dimen name="definite_dimen_64">64dp</dimen>
+    <dimen name="definite_dimen_66">66dp</dimen>
     <dimen name="definite_dimen_70">70dp</dimen>
+    <dimen name="definite_dimen_76">76dp</dimen>
     <dimen name="definite_dimen_80">80dp</dimen>
+    <dimen name="definite_dimen_92">92dp</dimen>
     <dimen name="definite_dimen_100">100dp</dimen>
     <dimen name="definite_dimen_120">120dp</dimen>
     <dimen name="definite_dimen_130">130dp</dimen>
@@ -32,10 +38,8 @@
     <dimen name="definite_dimen_150">150dp</dimen>
     <dimen name="definite_dimen_200">200dp</dimen>
     <dimen name="definite_dimen_390">390dp</dimen>
-    <dimen name="definite_dimen_38">38dp</dimen>
     <dimen name="definite_dimen_340">340dp</dimen>
     <dimen name="definite_dimen_160">160dp</dimen>
-
     <dimen name="definite_dimen_250">250dp</dimen>
 
     <!-- Text size -->
@@ -54,25 +58,5 @@
     <dimen name="text_size_huge">28sp</dimen>
     <dimen name="text_size_xhuge">30sp</dimen>
     <dimen name="text_size_xxhuge">32sp</dimen>
-
-    <dimen name="space_24sp">24sp</dimen>
-    <dimen name="space_18sp">18sp</dimen>
-    <dimen name="space_14sp">14sp</dimen>
-
-
-    <!--Line number -->
-    <dimen name="line_number_4">4</dimen>
-    <dimen name="SPACE_92">92dp</dimen>
-    <dimen name="SPACE_64">64dp</dimen>
-    <dimen name="SPACE_33">33dp</dimen>
-    <dimen name="SPACE_66">66dp</dimen>
-    <dimen name="SPACE_24">24dp</dimen>
-    <dimen name="SPACE_5">5dp</dimen>
-    <dimen name="SPACE_44">44dp</dimen>
-    <dimen name="SPACE_30">30dp</dimen>
-    <dimen name="SPACE_58">58dp</dimen>
-    <dimen name="SPACE_54">54dp</dimen>
-    <dimen name="SPACE_20">20dp</dimen>
-
 
 </resources>
