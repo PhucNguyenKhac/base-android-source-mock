@@ -62,6 +62,18 @@
 
     <!--Line number -->
     <dimen name="line_number_4">4</dimen>
+    <dimen name="SPACE_92DP">92dp</dimen>
+    <dimen name="SPACE_64DP">64dp</dimen>
+    <dimen name="SPACE_33DP">33dp</dimen>
+    <dimen name="SPACE_66DP">66dp</dimen>
+    <dimen name="SPACE_24DP">24dp</dimen>
+    <dimen name="SPACE_5DP">5dp</dimen>
+    <dimen name="SPACE_44DP">44dp</dimen>
+    <dimen name="SPACE_30DP">30dp</dimen>
+    <dimen name="SPACE_58DP">58dp</dimen>
+    <dimen name="SPACE_54DP">54dp</dimen>
+
+
     <dimen name="SPACE_92">92dp</dimen>
     <dimen name="SPACE_64">64dp</dimen>
     <dimen name="SPACE_33">33dp</dimen>
