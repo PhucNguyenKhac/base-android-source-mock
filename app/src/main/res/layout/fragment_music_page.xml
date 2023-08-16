@@ -23,8 +23,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/back_button"
-                android:layout_marginStart="@dimen/SPACE_33DP"
-                android:layout_marginTop="@dimen/SPACE_66DP"
+                android:layout_marginStart="@dimen/SPACE_33"
+                android:layout_marginTop="@dimen/SPACE_66"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
@@ -32,8 +32,8 @@
                 android:id="@+id/tv_now_playing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/SPACE_92DP"
-                android:layout_marginTop="@dimen/SPACE_64DP"
+                android:layout_marginStart="@dimen/SPACE_92"
+                android:layout_marginTop="@dimen/SPACE_64"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/tv_now_playing"
                 android:textColor="@color/colorPrimary"
@@ -59,8 +59,8 @@
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/img_singer"
-                android:layout_marginTop="@dimen/SPACE_24DP"
-                android:layout_marginStart="@dimen/SPACE_33DP"/>
+                android:layout_marginTop="@dimen/SPACE_24"
+                android:layout_marginStart="@dimen/SPACE_33"/>
             <TextView
                 android:id="@+id/tv_first_name"
                 android:layout_width="wrap_content"
@@ -71,15 +71,15 @@
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintTop_toBottomOf="@id/tv_singer_name"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="@dimen/SPACE_33DP"
-                android:layout_marginTop="@dimen/SPACE_5DP"/>
+                android:layout_marginStart="@dimen/SPACE_33"
+                android:layout_marginTop="@dimen/SPACE_5"/>
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_heart"
                 app:layout_constraintTop_toBottomOf="@+id/img_singer"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="@dimen/SPACE_44DP"
+                android:layout_marginTop="@dimen/SPACE_44"
                 android:layout_marginEnd="43dp"/>
             <androidx.appcompat.widget.AppCompatSeekBar
                 android:id="@+id/seekbar"
@@ -88,9 +88,9 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_first_name"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="@dimen/SPACE_30DP"
-                android:layout_marginEnd="@dimen/SPACE_33DP"
-                android:layout_marginTop="@dimen/SPACE_58DP"
+                android:layout_marginStart="@dimen/SPACE_30"
+                android:layout_marginEnd="@dimen/SPACE_33"
+                android:layout_marginTop="@dimen/SPACE_58"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/seekbar"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="@dimen/SPACE_33DP"/>
+                android:layout_marginStart="@dimen/SPACE_33"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -111,8 +111,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/seekbar"
                 android:textColor="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginStart="@dimen/SPACE_33DP"
-                android:layout_marginEnd="@dimen/SPACE_44DP"/>
+                android:layout_marginStart="@dimen/SPACE_33"
+                android:layout_marginEnd="@dimen/SPACE_44"/>
 
             <LinearLayout
                 android:id="@+id/control_layout"
@@ -169,7 +169,7 @@
                 app:layout_constraintTop_toBottomOf="@id/control_layout"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="@dimen/SPACE_54DP"/>
+                android:layout_marginTop="@dimen/SPACE_54"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
