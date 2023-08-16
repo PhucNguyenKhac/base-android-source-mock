@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryDark"
     android:layout_marginEnd="@dimen/definite_dimen_12">
 
 
@@ -17,11 +18,10 @@
 
         <ImageView
             android:id="@+id/imgTodayHitItem"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_today_hit_item"
-            android:scaleType="centerCrop"
-            android:src="@drawable/img_song_test"
+            android:layout_width="@dimen/definite_dimen_128"
+            android:layout_height="@dimen/definite_dimen_128"
+            android:scaleType="center"
+            android:adjustViewBounds="true"
             tools:ignore="ContentDescription" />
     </androidx.cardview.widget.CardView>
 
@@ -29,14 +29,16 @@
         android:id="@+id/tvTodayHitName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="ArTi Untuk Cinta"
         android:fontFamily="@font/montserrat"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:layout_marginTop="@dimen/definite_dimen_6"
         android:textColor="@color/colorPrimary"
         android:gravity="center"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/cardviewTodayHitItem"
         app:layout_constraintStart_toStartOf="@id/cardviewTodayHitItem"
+        app:layout_constraintEnd_toEndOf="parent"
         android:textSize="@dimen/text_size_small"/>
 
 
@@ -44,7 +46,6 @@
         android:id="@+id/tvTodayHitArtist"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Arsy Widianto, Tiara Andini"
         android:fontFamily="@font/montserrat"
         android:textColor="@color/colorPrimary"
         android:maxLines="1"
