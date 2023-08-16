@@ -24,13 +24,7 @@
             android:name=".ui.activity.SplashActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
-            android:theme="@style/AppTheme.Splash"
-            >
-<!--        <activity-->
-<!--            android:name=".ui.test.ChannelActivity"-->
-<!--            android:configChanges="orientation|screenSize"-->
-<!--            android:exported="true"-->
-<!--            >-->
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
