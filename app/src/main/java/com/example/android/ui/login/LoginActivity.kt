@@ -3,7 +3,6 @@ package com.example.android.ui.login
 import android.os.Bundle
 import android.util.Log
 import android.util.SparseArray
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.util.forEach
@@ -19,10 +18,10 @@ import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
-import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 class LoginActivity : BaseActivity(), HasAndroidInjector {
     private lateinit var binding: LoginActivityBinding

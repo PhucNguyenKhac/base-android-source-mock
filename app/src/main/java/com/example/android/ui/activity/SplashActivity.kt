@@ -13,5 +13,8 @@ class SplashActivity(override val toolBar: Toolbar? = null) : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         DataBindingUtil.setContentView<ViewDataBinding>(this, R.layout.splash_activity)
+
+
+
     }
 }

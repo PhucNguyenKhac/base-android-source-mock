@@ -3,140 +3,136 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#000000"
 
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:background="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:ignore="MissingConstraints">
-
-
-            <ImageView
+    >
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/background_profile"
-                android:layout_width="423dp"
-                android:layout_height="464dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_profile"
+                android:paddingBottom="@dimen/definite_dimen_24"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/background_profile"
-                tools:layout_editor_absoluteY="-122dp" />
-
-            <TextView
-                android:id="@+id/text_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/profil"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="30dp" />
-
-            <ImageView
-                android:id="@+id/image_more"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.707"
-                app:layout_constraintStart_toEndOf="@+id/text_profile"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/more" />
+                android:paddingTop="@dimen/definite_dimen_50">
 
-            <ImageView
-                android:id="@+id/profile_image"
-                android:layout_width="96dp"
-                android:layout_height="83dp"
-                android:background="@drawable/roundedimageprofile"
-                android:radius="120dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/propil_image"
-                tools:layout_editor_absoluteY="78dp" />
+                <TextView
+                    android:id="@+id/text_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/definite_dimen_20"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/profil"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteY="30dp" />
 
-            <TextView
-                android:id="@+id/text_nameProfil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/fauzian_ahmad"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+                <ImageView
+                    android:id="@+id/image_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.707"
+                    app:layout_constraintStart_toEndOf="@+id/text_profile"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/more" />
 
-            <TextView
-                android:id="@+id/text_emailProfil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/roboto_regular"
-                android:text="fauzianahmad04@gmail.com"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_nameProfil" />
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="96dp"
+                    android:layout_height="83dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/roundedimageprofile"
+                    android:radius="120dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_profile"
+                    app:srcCompat="@drawable/propil_image" />
 
-            <TextView
-                android:id="@+id/text_follower"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/white"
-                android:text="Followers"
+                <TextView
+                    android:id="@+id/text_nameProfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/fauzian_ahmad"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
-                app:layout_constraintEnd_toStartOf="@+id/text_nameProfil"
-                app:layout_constraintHorizontal_bias="0.384"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="248dp" />
+                <TextView
+                    android:id="@+id/text_emailProfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="fauzianahmad04@gmail.com"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_nameProfil" />
 
-            <TextView
-                android:id="@+id/text_following"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="64dp"
-                android:fontFamily="@font/roboto_regular"
-                android:text="Following"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                tools:layout_editor_absoluteY="248dp" />
+                <TextView
+                    android:id="@+id/text_follower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="92dp"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Followers"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_emailProfil"
+                    />
 
-            <TextView
-                android:id="@+id/numberFollower"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat"
-                android:text="129"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/text_follower"
-                app:layout_constraintStart_toStartOf="@+id/text_follower"
-                tools:layout_editor_absoluteY="274dp" />
+                <TextView
+                    android:id="@+id/text_following"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="92dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Following"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_emailProfil" />
 
-            <TextView
-                android:id="@+id/numberFollowing"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat"
-                android:text="238"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/text_following"
-                app:layout_constraintStart_toStartOf="@+id/text_following"
-                tools:layout_editor_absoluteY="274dp" />
+                <TextView
+                    android:id="@+id/numberFollower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="129"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/text_follower"
+                    app:layout_constraintStart_toStartOf="@+id/text_follower"
+                    app:layout_constraintTop_toBottomOf="@+id/text_follower"
+                    tools:layout_editor_absoluteY="274dp" />
+
+                <TextView
+                    android:id="@+id/numberFollowing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="238"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/text_following"
+                    app:layout_constraintStart_toStartOf="@+id/text_following"
+                    app:layout_constraintTop_toBottomOf="@+id/text_following"
+                    tools:layout_editor_absoluteY="274dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/text_findFriend"
@@ -145,182 +141,82 @@
                 android:fontFamily="@font/montserrat"
                 android:text="Find friend"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/text_follower"
-                app:layout_constraintStart_toStartOf="@+id/text_follower"
-                tools:layout_editor_absoluteY="359dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/findFriend"
+                android:layout_marginStart="77dp"
+                />
 
             <ImageView
                 android:id="@+id/findFriend"
-                android:layout_width="35dp"
-                android:layout_height="26dp"
-                app:layout_constraintEnd_toEndOf="@+id/text_follower"
-                app:layout_constraintHorizontal_bias="0.428"
-                app:layout_constraintStart_toStartOf="@+id/text_follower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/background_profile"
                 app:srcCompat="@drawable/findfriend_button"
-                tools:layout_editor_absoluteY="326dp" />
+                android:layout_marginTop="@dimen/definite_dimen_24"
+                android:layout_marginStart="102dp"
+                />
 
             <ImageView
                 android:id="@+id/share"
-                android:layout_width="30dp"
-                android:layout_height="24dp"
-                app:layout_constraintEnd_toEndOf="@+id/text_following"
-                app:layout_constraintHorizontal_bias="0.55"
-                app:layout_constraintStart_toStartOf="@+id/text_following"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/background_profile"
+                android:layout_marginTop="@dimen/definite_dimen_24"
+                android:layout_marginEnd="102dp"
                 app:srcCompat="@drawable/share_button"
-                tools:layout_editor_absoluteY="326dp" />
+                />
 
             <TextView
                 android:id="@+id/text_share"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat"
                 android:text="Share"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/share"
-                app:layout_constraintStart_toStartOf="@+id/share"
-                tools:layout_editor_absoluteY="359dp" />
-
-            <ImageView
-                android:id="@+id/barBlur"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/rectangle_4342"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="385dp" />
-
-            <ImageView
-                android:id="@+id/background_bar"
-                android:layout_width="492dp"
-                android:layout_height="144dp"
-                android:layout_marginTop="12dp"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.506"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-                app:srcCompat="@drawable/background_bar" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="425dp"
-                android:layout_height="218dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/barBlur"
-                app:layout_constraintVertical_bias="0.123" />
-
-            <ImageView
-                android:id="@+id/home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.111"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/background_bar"
-                app:srcCompat="@drawable/home" />
-
-            <ImageView
-                android:id="@+id/playlist"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@+id/history"
-                app:layout_constraintHorizontal_bias="0.364"
-                app:layout_constraintStart_toEndOf="@+id/home"
-                app:srcCompat="@drawable/playlist"
-                tools:layout_editor_absoluteY="667dp" />
-
-            <ImageView
-                android:id="@+id/history"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@+id/profile"
-                app:layout_constraintHorizontal_bias="0.77"
-                app:layout_constraintStart_toEndOf="@+id/home"
-                app:srcCompat="@drawable/history"
-                tools:layout_editor_absoluteY="667dp" />
-
-            <ImageView
-                android:id="@+id/profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.848"
-                app:layout_constraintStart_toEndOf="@+id/home"
-                app:srcCompat="@drawable/profile"
-                tools:layout_editor_absoluteY="667dp" />
-
-            <ImageView
-                android:id="@+id/button_spotify"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-                app:srcCompat="@drawable/button_spotify" />
-
-            <TextView
-                android:id="@+id/text_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/home"
-                app:layout_constraintStart_toStartOf="@+id/home"
-                tools:layout_editor_absoluteY="700dp" />
-
-            <TextView
-                android:id="@+id/text_playlist"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Playlist"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/playlist"
-                app:layout_constraintHorizontal_bias="0.461"
-                app:layout_constraintStart_toStartOf="@+id/playlist"
-                tools:layout_editor_absoluteY="700dp" />
-
-            <TextView
-                android:id="@+id/text_history"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="History"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/history"
-                app:layout_constraintStart_toStartOf="@+id/history"
-                tools:layout_editor_absoluteY="700dp" />
-
-            <TextView
-                android:id="@+id/text_profil"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Profile"
-                android:fontFamily="@font/roboto_regular"
-                android:textColor="#42C83C"
-                app:layout_constraintEnd_toEndOf="@+id/profile"
-                app:layout_constraintStart_toStartOf="@+id/profile"
-                tools:layout_editor_absoluteY="700dp" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:text="Mostly Played"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/barBlur"
-                app:layout_constraintHorizontal_bias="0.052"
-                app:layout_constraintStart_toStartOf="@+id/barBlur"
-                tools:layout_editor_absoluteY="401dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/share"
+                android:layout_marginEnd="99dp"
+
+                />
+
+            <ImageView
+                android:id="@+id/blur_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/definite_dimen_20"
+                app:layout_constraintTop_toBottomOf="@id/text_findFriend"
+                android:layout_marginTop="@dimen/definite_dimen_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/blur_bar_mps"
+                />
+
+                <TextView
+                    android:id="@+id/text_mostplayed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/definite_dimen_5"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Mostly Played"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="@dimen/definite_dimen_32"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/blur_bar" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_mps"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/definite_dimen_6"
+                        android:paddingBottom="@dimen/definite_dimen_32"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/text_mostplayed"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+
+                        />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
