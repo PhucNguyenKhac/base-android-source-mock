@@ -16,9 +16,10 @@
     <FrameLayout
         android:id="@+id/artist_img_frame"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@color/grey"
-        app:layout_constraintBottom_toTopOf="@id/infor_follower"
+        app:layout_constraintBottom_toTopOf="@id/horizontal_guideline_for_artist_image"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -32,202 +33,217 @@
             app:shapeAppearanceOverlay="@style/RoundCorner" />
     </FrameLayout>
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/horizontal_guideline"
+    <ImageView
+        android:id="@+id/imgBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.42" />
+        android:layout_marginStart="@dimen/definite_dimen_20"
+        android:layout_marginTop="@dimen/definite_dimen_20"
+        android:background="@drawable/back_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/infor_follower"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/horizontal_guideline"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnFollow"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/definite_dimen_20"
+        android:layout_marginTop="@dimen/definite_dimen_20"
+        android:background="@drawable/transparent_button"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/follow"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_size_small"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.84"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/artist_img_frame">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/number_follower_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gradient_color"
-            app:layout_constraintTop_toTopOf="parent">
+    <ImageView
+        android:id="@+id/imgMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/definite_dimen_10"
+        android:layout_marginTop="@dimen/definite_dimen_20"
+        android:layout_marginEnd="@dimen/definite_dimen_20"
+        android:background="@drawable/ic_more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnFollow"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline2"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="206dp" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/definite_dimen_20"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="@id/guideline2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/definite_dimen_12"
-                    android:fontFamily="@font/montserrat"
-                    android:text="Followers"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/text_size_tiny"
-                    android:textStyle="normal" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/definite_dimen_10"
-                    android:fontFamily="@font/montserrat"
-                    android:text="@string/number_of_follower"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/text_size_small"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/definite_dimen_20"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintLeft_toLeftOf="@id/guideline2"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline2"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/definite_dimen_12"
-                    android:fontFamily="@font/montserrat"
-                    android:text="Monthly listerners"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/text_size_tiny" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/definite_dimen_10"
-                    android:fontFamily="@font/montserrat"
-                    android:text="@string/number_of_monthly_listerners"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="@dimen/text_size_small"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
+        android:id="@+id/tvArtistName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/definite_dimen_24"
+        android:layout_marginStart="@dimen/definite_dimen_20"
         android:fontFamily="@font/montserrat"
         android:text="@string/name_of_artist"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/text_size_xxlarge"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/artist_img_frame"
-        app:layout_constraintBottom_toTopOf="@id/horizontal_guideline_for_artist_image"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/definite_dimen_12"
-        android:layout_marginTop="@dimen/definite_dimen_12"
-        android:background="@drawable/back_button"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="90dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="@dimen/definite_dimen_12"
-        android:layout_marginEnd="@dimen/definite_dimen_60"
-        android:background="@drawable/transparent_button"
-        android:fontFamily="@font/montserrat"
-        android:text="Follow"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/definite_dimen_8"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="@dimen/definite_dimen_12"
-        android:layout_marginEnd="@dimen/definite_dimen_14"
-        android:background="@drawable/more_options"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="379dp"
-        tools:layout_editor_absoluteY="35dp" />
+        app:layout_constraintVertical_bias="0.85" />
 
-    <TextView
-        android:id="@+id/album_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/definite_dimen_24"
-        android:layout_marginTop="@dimen/definite_dimen_12"
-        android:fontFamily="@font/montserrat"
-        android:text="Albums"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/text_size_small"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_album"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/album_textview" />
-
-    <TextView
-        android:id="@+id/songs_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/definite_dimen_24"
-        android:fontFamily="@font/montserrat"
-        android:text="Songs"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/text_size_small"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recycler_view_album" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_songs"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/definite_dimen_6"
-        android:paddingBottom="@dimen/definite_dimen_32"
+        android:layout_height="@dimen/definite_dimen_0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/songs_textview" />
+        app:layout_constraintTop_toBottomOf="@id/artist_img_frame">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/infor_follower"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/number_follower_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gradient_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="206dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/definite_dimen_20"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/definite_dimen_12"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/followers"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text_size_normal"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/definite_dimen_10"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/number_of_follower"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text_size_xxnormal"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/definite_dimen_20"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/guideline2"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/definite_dimen_12"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/monthly_listeners"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text_size_normal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="@dimen/definite_dimen_10"
+                            android:fontFamily="@font/montserrat"
+                            android:text="@string/number_of_monthly_listerners"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/text_size_xxnormal"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/album_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/definite_dimen_20"
+                android:layout_marginTop="@dimen/definite_dimen_20"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/albums"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_xxnormal"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/infor_follower" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_album"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/definite_dimen_16"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/album_textview" />
+
+            <TextView
+                android:id="@+id/songs_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/definite_dimen_20"
+                android:layout_marginTop="@dimen/definite_dimen_20"
+                android:fontFamily="@font/montserrat"
+                android:text="@string/songs"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_xxnormal"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recycler_view_album" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_songs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/definite_dimen_16"
+                android:paddingBottom="@dimen/definite_dimen_32"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/songs_textview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

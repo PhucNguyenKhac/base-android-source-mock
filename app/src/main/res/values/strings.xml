@@ -41,4 +41,12 @@
     <string name="tv_lyric_up">Lyrics</string>
 
     <string name="get_started">Get Started</string>
+    <string name="follow">Follow</string>
+    <string name="followers">Followers</string>
+    <string name="songs">Songs</string>
+    <string name="albums">Albums</string>
+    <string name="choose_mode">Choose mode</string>
+    <string name="dark_mode">Dark mode</string>
+    <string name="light_mode">Light mode</string>
+    <string name="btn_continue">Continue</string>
 </resources>

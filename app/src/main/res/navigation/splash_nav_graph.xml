@@ -52,6 +52,7 @@
         android:label="ArcticsFragment" />
 
 
+
     <!--    <fragment-->
 <!--        android:id="@+id/progressSplashFragment"-->
 <!--        android:name=""/>-->
