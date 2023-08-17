@@ -11,8 +11,6 @@ import com.example.android.databinding.ActivityChannelBinding
 import com.example.android.ui.activity.BaseActivity
 import com.google.firebase.FirebaseApp
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -77,9 +75,7 @@ class ChannelActivity : BaseActivity(), HasAndroidInjector {
 
 
     private fun getData() {
-        FirebaseApp.initializeApp(this)
         val db = FirebaseFirestore.getInstance()
-
         db.collection("Artist")
             .get()
             .addOnSuccessListener { result ->
