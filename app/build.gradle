@@ -126,6 +126,7 @@ dependencies {
     implementation deps.glide
     implementation 'com.google.firebase:firebase-firestore:24.7.0'
     implementation 'com.google.firebase:firebase-auth-ktx:22.1.1'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     kapt deps.dagger.compiler
     kapt deps.dagger.androidProcessor
