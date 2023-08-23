@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/arcticsFragment"
+    app:startDestination="@id/homepageFragment"
     android:id="@+id/splash_nav_graph"
     >
 

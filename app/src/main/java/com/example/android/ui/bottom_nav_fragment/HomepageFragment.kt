@@ -15,7 +15,9 @@ import com.example.android.databinding.FragmentHomepageBinding
 import com.example.android.adapter.FragmentPageAdapter
 import com.example.android.adapter.SongAdapter
 import com.example.android.model.Song
+import com.example.android.ui.BaseFragment
 import com.google.android.material.tabs.TabLayout
+import dagger.android.HasAndroidInjector
 import kotlinx.android.synthetic.main.login_activity.view.*
 
 @Suppress("DEPRECATION")
@@ -142,11 +144,4 @@ class HomepageFragment : Fragment() {
         }
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        homepageBinding.icSearch.setOnClickListener {
-            findNavController().navigate(R.id.action_homepageFragment_to_playlistFragment)
-        }
-    }
 }

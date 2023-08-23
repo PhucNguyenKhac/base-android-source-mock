@@ -2,7 +2,7 @@ package com.example.external.di
 
 import android.app.Application
 import com.example.external.provider.LoginService
-import com.example.external.test.ChannelService
+import com.example.external.channel.ChannelService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -25,6 +25,7 @@ class NetworkModule() {
 //    private var baseAuthUrl = "https://run.mocky.io/"
 
     private var baseAuthUrl = "https://www.googleapis.com/youtube/v3/"
+
     @Provides
     fun provideGson(): Gson {
         return GsonBuilder().create()

@@ -11,7 +11,9 @@ import dagger.Module
         AppViewModelModule::class,
         AppActivityModule::class,
         AppFragmentModule::class,
-        CoroutinesModule::class
+        CoroutinesModule::class,
+        AppConstantModule::class,
+        FirestoreModule::class
     ]
 )
 abstract class AppModule {

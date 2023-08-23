@@ -2,15 +2,15 @@
 
 buildscript {
     ext.buildConfig = [
-        'compileSdk': 33,
-        'minSdk'    : 24,
-        'targetSdk' : 33,
-        'version'   : [
-            'major': 2,
-            'minor': 26,
-            'patch': 0,
-            'build': 0,
-        ],
+            'compileSdk': 33,
+            'minSdk'    : 24,
+            'targetSdk' : 33,
+            'version'   : [
+                    'major': 2,
+                    'minor': 26,
+                    'patch': 0,
+                    'build': 0,
+            ],
     ]
 
     ext.versions = [
@@ -49,102 +49,101 @@ buildscript {
             'timber'                 : '5.0.0-SNAPSHOT',
             'trustkit'               : '1.1.5',
             'certificateTransparency': '0.2.0',
-            'lottie': '6.0.1',
-            'youtubeExtractor': '0.0.6',
-            'appcompatv7': '25.0.1',
-            'playServicesAuth': '20.6.0',
-            'easypermissions': '0.3.0',
-            'firestore':'24.7.0'
+            'lottie'                 : '6.0.1',
+            'youtubeExtractor'       : '0.0.6',
+            'appcompatv7'            : '25.0.1',
+            'playServicesAuth'       : '20.6.0',
+            'easypermissions'        : '0.3.0',
+            'firestore'              : '24.7.0',
     ]
 
     ext.deps = [
-        'kotlin'                 : [
-            'stdlib'       : [
-                'jdk8': "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
+            'kotlin'                 : [
+                    'stdlib'       : [
+                            'jdk8': "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
+                    ],
+                    'test'         : [
+                            'annotations': "org.jetbrains.kotlin:kotlin-test-annotations-common:${versions.kotlin}",
+                            'jdk'        : "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}",
+                    ],
+                    'coroutines'   : [
+                            'jdk8'   : "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:${versions.kotlinCoroutines}",
+                            'android': "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlinCoroutines}",
+                    ],
+                    'serialization': [
+                            'jdk': "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${versions.kotlinSerialization}",
+                    ]
             ],
-            'test'         : [
-                'annotations': "org.jetbrains.kotlin:kotlin-test-annotations-common:${versions.kotlin}",
-                'jdk'        : "org.jetbrains.kotlin:kotlin-test-junit:${versions.kotlin}",
+            'trustkit'               : "com.datatheorem.android.trustkit:trustkit:${versions.trustkit}",
+            'certificateTransparency': "com.babylon.certificatetransparency:certificatetransparency-android:${versions.certificateTransparency}",
+            'timber'                 : [
+                    'common' : "com.jakewharton.timber:timber-common:${versions.timber}",
+                    'jdk'    : "com.jakewharton.timber:timber-jdk:${versions.timber}",
+                    'android': "com.jakewharton.timber:timber-android:${versions.timber}",
             ],
-            'coroutines'   : [
-                'jdk8'   : "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:${versions.kotlinCoroutines}",
-                'android': "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.kotlinCoroutines}",
+            'androidx'               : [
+                    'core'            : "androidx.core:core-ktx:${versions.ktx}",
+                    'appCompat'       : "androidx.appcompat:appcompat:${versions.appcompat}",
+                    'browser'         : "androidx.browser:browser:${versions.androidxBrowser}",
+                    'constraintLayout': "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}",
+                    'crypto'          : "androidx.security:security-crypto:${versions.crypto}",
+                    'viewpager2'      : "androidx.viewpager2:viewpager2:${versions.viewpager2}",
+                    'legacy'          : [
+                            'v4': "androidx.legacy:legacy-support-v4:${versions.legacy}"
+                    ],
+                    'test'            : [
+                            'runner'          : "androidx.test:runner:${versions.androidxTest}",
+                            'rules'           : "androidx.test:rules:${versions.androidxTest}",
+                            'testingCore'     : "androidx.arch.core:core-testing:${versions.androidxTestCore}",
+                            'testingCoroutine': 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3'
+                    ],
+                    'lifecycle'       : [
+                            'viewmodel' : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
+                            'livedata'  : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
+                            'java8'     : "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycle}",
+                            'extensions': "androidx.lifecycle:lifecycle-extensions:${versions.extensions}",
+                            'savedstate': "androidx.lifecycle:lifecycle-viewmodel-savedstate:${versions.androidxSavedState}"
+                    ],
+                    'navigation'      : [
+                            'fragment': "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                            'ui'      : "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+                    ],
             ],
-            'serialization': [
-                'jdk': "org.jetbrains.kotlinx:kotlinx-serialization-runtime:${versions.kotlinSerialization}",
-            ]
-        ],
-        'trustkit'               : "com.datatheorem.android.trustkit:trustkit:${versions.trustkit}",
-        'certificateTransparency': "com.babylon.certificatetransparency:certificatetransparency-android:${versions.certificateTransparency}",
-        'timber'                 : [
-            'common' : "com.jakewharton.timber:timber-common:${versions.timber}",
-            'jdk'    : "com.jakewharton.timber:timber-jdk:${versions.timber}",
-            'android': "com.jakewharton.timber:timber-android:${versions.timber}",
-        ],
-        'androidx'               : [
-            'core'            : "androidx.core:core-ktx:${versions.ktx}",
-            'appCompat'       : "androidx.appcompat:appcompat:${versions.appcompat}",
-            'browser'         : "androidx.browser:browser:${versions.androidxBrowser}",
-            'constraintLayout': "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}",
-            'crypto'          : "androidx.security:security-crypto:${versions.crypto}",
-            'viewpager2'      : "androidx.viewpager2:viewpager2:${versions.viewpager2}",
-            'legacy'          : [
-                'v4': "androidx.legacy:legacy-support-v4:${versions.legacy}"
+            'material'               : "com.google.android.material:material:${versions.material}",
+            'okhttp'                 : [
+                    'client'       : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+                    'logging'      : "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
+                    'mockWebServer': "com.squareup.okhttp3:mockwebserver:${versions.okhttp}",
             ],
-            'test'            : [
-                'runner'          : "androidx.test:runner:${versions.androidxTest}",
-                'rules'           : "androidx.test:rules:${versions.androidxTest}",
-                'testingCore'     : "androidx.arch.core:core-testing:${versions.androidxTestCore}",
-                'testingCoroutine': 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3'
+            'retrofit'               : [
+                    'client'                       : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+                    'converterKotlinxSerialization': 'com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.4.0',
+                    'rx'                           : "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
+                    'gson'                         : "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
             ],
-            'lifecycle'       : [
-                'viewmodel' : "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}",
-                'livedata'  : "androidx.lifecycle:lifecycle-livedata-ktx:${versions.lifecycle}",
-                'java8'     : "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycle}",
-                'extensions': "androidx.lifecycle:lifecycle-extensions:${versions.extensions}",
-                'savedstate': "androidx.lifecycle:lifecycle-viewmodel-savedstate:${versions.androidxSavedState}"
+            'dagger'                 : [
+                    'runtime'         : "com.google.dagger:dagger:${versions.dagger}",
+                    'compiler'        : "com.google.dagger:dagger-compiler:${versions.dagger}",
+                    'android'         : "com.google.dagger:dagger-android:${versions.dagger}",
+                    'androidSupport'  : "com.google.dagger:dagger-android-support:${versions.dagger}",
+                    'androidProcessor': "com.google.dagger:dagger-android-processor:${versions.dagger}",
             ],
-            'navigation'      : [
-                'fragment': "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
-                'ui'      : "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+            'junit'                  : "junit:junit:${versions.junit}",
+            'flexbox'                : "com.google.android.flexbox:flexbox:${versions.flexBox}",
+            'mockk'                  : "io.mockk:mockk:${versions.mockk}",
+            'mockkAndroid'           : "io.mockk:mockk-android:${versions.mockk}",
+            'junitExt'               : "androidx.test.ext:junit:${versions.junitExt}",
+            'json'                   : "org.json:json:${versions.json}",
+            'google'                 : [
+                    'gson': "com.google.code.gson:gson:${versions.gson}"
             ],
-        ],
-        'material'               : "com.google.android.material:material:${versions.material}",
-        'okhttp'                 : [
-            'client'       : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
-            'logging'      : "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}",
-            'mockWebServer': "com.squareup.okhttp3:mockwebserver:${versions.okhttp}",
-        ],
-        'retrofit'               : [
-            'client'                       : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
-            'converterKotlinxSerialization': 'com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.4.0',
-            'rx'                           : "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
-            'gson'                         : "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
-        ],
-        'dagger'                 : [
-            'runtime'         : "com.google.dagger:dagger:${versions.dagger}",
-            'compiler'        : "com.google.dagger:dagger-compiler:${versions.dagger}",
-            'android'         : "com.google.dagger:dagger-android:${versions.dagger}",
-            'androidSupport'  : "com.google.dagger:dagger-android-support:${versions.dagger}",
-            'androidProcessor': "com.google.dagger:dagger-android-processor:${versions.dagger}",
-        ],
-        'junit'                  : "junit:junit:${versions.junit}",
-        'flexbox'                : "com.google.android.flexbox:flexbox:${versions.flexBox}",
-        'mockk'                  : "io.mockk:mockk:${versions.mockk}",
-        'mockkAndroid'           : "io.mockk:mockk-android:${versions.mockk}",
-        'junitExt'               : "androidx.test.ext:junit:${versions.junitExt}",
-        'json'                   : "org.json:json:${versions.json}",
-        'google'                 : [
-            'gson'     : "com.google.code.gson:gson:${versions.gson}"
-        ],
-        'lottie': "com.airbnb.android:lottie:${versions.lottie}",
-            'youtubeExtractor': "com.github.maxrave-dev:kotlin-youtubeExtractor:${versions.youtubeExtractor}",
-        'appcompatv7': "com.android.support:appcompat-v7:${versions.appcompatv7}",
-        'playServicesAuth': "com.google.android.gms:play-services-auth:${versions.playServicesAuth}",
-        'easypermissions': "pub.devrel:easypermissions:${versions.easypermissions}",
-        'glide': "com.github.bumptech.glide:glide:${versions.glide}",
-        'firestore':"com.google.firebase:firebase-firestore-ktx:${versions.firestore}"
-
+            'lottie'                 : "com.airbnb.android:lottie:${versions.lottie}",
+            'youtubeExtractor'       : "com.github.maxrave-dev:kotlin-youtubeExtractor:${versions.youtubeExtractor}",
+            'appcompatv7'            : "com.android.support:appcompat-v7:${versions.appcompatv7}",
+            'playServicesAuth'       : "com.google.android.gms:play-services-auth:${versions.playServicesAuth}",
+            'easypermissions'        : "pub.devrel:easypermissions:${versions.easypermissions}",
+            'glide'                  : "com.github.bumptech.glide:glide:${versions.glide}",
+            'firestore'              : "com.google.firebase:firebase-firestore-ktx:${versions.firestore}",
     ]
 
     repositories {

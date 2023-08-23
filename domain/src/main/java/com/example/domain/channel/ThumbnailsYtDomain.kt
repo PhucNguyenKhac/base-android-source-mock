@@ -1,4 +1,4 @@
-package com.example.domain.test
+package com.example.domain.channel
 
 data class ThumbnailsYtDomain(
     val high: High? = null

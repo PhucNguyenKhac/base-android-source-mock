@@ -1,9 +1,9 @@
 package com.example.external.di
 
-import com.example.domain.test.ChannelRepository
+import com.example.domain.channel.ChannelRepository
 import com.example.domain.usecases.LoginRepository
 import com.example.external.provider.LoginProvider
-import com.example.external.test.ChannelProvider
+import com.example.external.channel.ChannelProvider
 import dagger.Binds
 import dagger.Module
 
@@ -15,4 +15,5 @@ abstract class RepositoriesModule {
 
     @Binds
     abstract fun bindChannelRepository(channelProvider: ChannelProvider): ChannelRepository
+
 }

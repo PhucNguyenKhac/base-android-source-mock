@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.di.ViewModelFactory
 import com.example.android.di.ViewModelKey
-import com.example.android.ui.test.ChannelViewModel
+import com.example.android.viewmodel.ChannelViewModel
 import com.example.android.viewmodel.LoginViewModel
 import dagger.Binds
 import dagger.Module

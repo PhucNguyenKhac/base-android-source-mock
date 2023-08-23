@@ -1,4 +1,4 @@
-package com.example.domain.test
+package com.example.domain.channel
 
 data class ChannelResponseDomain(
     val items: List<Items>? = null
@@ -6,6 +6,6 @@ data class ChannelResponseDomain(
     data class Items(
         val id: String? = null,
         val snippet: SnippetYtDomain? = null,
-        val branding: BrandingYtDomain? = null
+        val statistic: StatisticsYtDomain? = null
     )
 }

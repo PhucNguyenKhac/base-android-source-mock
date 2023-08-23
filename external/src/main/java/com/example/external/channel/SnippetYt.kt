@@ -1,7 +1,7 @@
-package com.example.external.test
+package com.example.external.channel
 
 
-import com.example.domain.test.SnippetYtDomain
+import com.example.domain.channel.SnippetYtDomain
 import com.google.gson.annotations.SerializedName
 
 data class SnippetYt(
@@ -21,7 +21,10 @@ data class SnippetYt(
     val thumbnails: ThumbnailsYt,
 
     @SerializedName("country")
-    val country: String
+    val country: String,
+
+    @SerializedName("channelId")
+    val channelId: String
 
 ) {
     fun mapSnippetYtToDomain(snippet: SnippetYt): SnippetYtDomain {
@@ -31,7 +34,8 @@ data class SnippetYt(
             customUrl = snippet.customUrl,
             publishedAt = snippet.publishedAt,
             thumbnails = snippet.thumbnails.mapThumbnailsYtToDomain(snippet.thumbnails),
-            country = snippet.country
+            country = snippet.country,
+            channelId = snippet.channelId
         )
     }
 
