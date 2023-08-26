@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/get_started_fragment"
+    app:startDestination="@id/homepageFragment"
     android:id="@+id/splash_nav_graph"
     >
 
@@ -50,6 +50,7 @@
         android:id="@+id/arcticsFragment"
         android:name="com.example.android.ui.bottom_nav_fragment.ArcticsFragment"
         android:label="ArcticsFragment" />
+
 
 
     <!--    <fragment-->

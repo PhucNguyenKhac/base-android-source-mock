@@ -1,9 +1,6 @@
-package com.example.external.test
+package com.example.external.channel
 
-import androidx.annotation.Keep
-import com.example.domain.test.BrandingYtDomain
-import com.example.domain.test.SnippetYtDomain
-import com.example.domain.test.ThumbnailsYtDomain
+import com.example.domain.channel.ThumbnailsYtDomain
 import com.google.gson.annotations.SerializedName
 
 data class ThumbnailsYt(

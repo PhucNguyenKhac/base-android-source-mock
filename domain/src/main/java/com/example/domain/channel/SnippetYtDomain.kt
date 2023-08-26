@@ -1,4 +1,4 @@
-package com.example.domain.test
+package com.example.domain.channel
 
 data class SnippetYtDomain(
     val title: String? = null,
@@ -6,5 +6,6 @@ data class SnippetYtDomain(
     val customUrl: String? = null,
     val publishedAt: String? = null,
     val thumbnails: ThumbnailsYtDomain? = null,
-    val country: String? = null
+    val country: String? = null,
+    val channelId: String
 )

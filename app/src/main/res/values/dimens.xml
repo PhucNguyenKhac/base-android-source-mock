@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="definite_dimen_0">0dp</dimen>
     <dimen name="definite_dimen_1">1dp</dimen>
     <dimen name="definite_dimen_2">2dp</dimen>
     <dimen name="definite_dimen_4">4dp</dimen>
@@ -21,6 +22,7 @@
     <dimen name="definite_dimen_50">50dp</dimen>
     <dimen name="definite_dimen_56">56dp</dimen>
     <dimen name="definite_dimen_60">60dp</dimen>
+    <dimen name="definite_dimen_64">64dp</dimen>
     <dimen name="definite_dimen_70">70dp</dimen>
     <dimen name="definite_dimen_80">80dp</dimen>
     <dimen name="definite_dimen_100">100dp</dimen>
@@ -32,6 +34,7 @@
     <dimen name="definite_dimen_390">390dp</dimen>
     <dimen name="definite_dimen_38">38dp</dimen>
     <dimen name="definite_dimen_340">340dp</dimen>
+    <dimen name="definite_dimen_160">160dp</dimen>
 
     <dimen name="definite_dimen_250">250dp</dimen>
 

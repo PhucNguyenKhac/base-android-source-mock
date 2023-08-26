@@ -1,6 +1,6 @@
-package com.example.external.test
+package com.example.external.channel
 
-import com.example.domain.test.ChannelResponseDomain
+import com.example.domain.channel.ChannelResponseDomain
 import com.google.gson.annotations.SerializedName
 
 data class ChannelEntity(
@@ -17,16 +17,16 @@ data class ChannelEntity(
         @SerializedName("snippet")
         val snippet: SnippetYt,
 
-//        @SerializedName("branding")
-//        val branding: BrandingYt
+        @SerializedName("statistics")
+        val statistics: StatisticsYt
     )
 
     fun mapChannelEntityListToDomain(entityList: List<Items>): List<ChannelResponseDomain.Items> {
         return entityList.map { entity ->
             ChannelResponseDomain.Items(
                 id = entity.id,
-                snippet = entity.snippet.mapSnippetYtToDomain(entity.snippet)
-//                branding = entity.branding.mapBrandingYtToDomain(entity.branding)
+                snippet = entity.snippet.mapSnippetYtToDomain(entity.snippet),
+                statistic = entity.statistics.mapStatisticsYtToDomain(entity.statistics)
             )
         }
     }

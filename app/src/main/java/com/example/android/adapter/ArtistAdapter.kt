@@ -1,45 +1,50 @@
 package com.example.android.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CircleCrop
+import com.bumptech.glide.request.RequestOptions
 import com.example.android.R
+import com.example.android.databinding.ItemArtistBinding
 import com.example.android.model.Artist
-import com.example.android.model.Song
-import java.text.NumberFormat
-import java.util.*
 
-class ArtistAdapter (private val item: List<Artist>) :
-    RecyclerView.Adapter<ArtistAdapter.ViewHolder>() {
+class ArtistAdapter : ListAdapter<Artist, ArtistAdapter.ArtistHolder>(ArtistDiffCallback()) {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imgArtist: ImageView = itemView.findViewById(R.id.imgArtist)
-        val tvArtistName: TextView = itemView.findViewById(R.id.tvArtistName)
-        val tvListenersCountNumber: TextView = itemView.findViewById(R.id.tvListenersCountNumber)
+    inner class ArtistHolder(private val binding: ItemArtistBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(artist: Artist) {
+            binding.tvArtistName.text = artist.nameArtist
+            binding.tvArtistDescription.text = artist.descriptionArtist
+            Glide.with(binding.root)
+                .load(artist.imageArtist)
+                .apply(RequestOptions.bitmapTransform(CircleCrop()))
+                .error(R.drawable.image_not_available)
+                .into(binding.imgArtist)
+        }
     }
 
-    override fun getItemCount(): Int {
-        return item.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtistHolder {
+        val binding =
+            ItemArtistBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ArtistHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentItem = item[position]
-        holder.imgArtist.setImageResource(currentItem.imageArtist)
-        holder.tvArtistName.text = currentItem.nameArtist
-
-        //formatted number
-        val countListenerMonthly = currentItem.countListenerMonthly
-        val formattedNumber = NumberFormat.getNumberInstance(Locale("vi, VN")).format(countListenerMonthly)
-
-        holder.tvListenersCountNumber.text = formattedNumber.toString()
+    override fun onBindViewHolder(holder: ArtistHolder, position: Int) {
+        holder.bind(getItem(position))
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_artist, parent, false)
-        return ViewHolder(itemView)
+    class ArtistDiffCallback : DiffUtil.ItemCallback<Artist>() {
+        override fun areItemsTheSame(oldItem: Artist, newItem: Artist): Boolean {
+            return oldItem.nameArtist == newItem.nameArtist
+        }
+
+        override fun areContentsTheSame(oldItem: Artist, newItem: Artist): Boolean {
+            return oldItem == newItem
+        }
     }
+
 }

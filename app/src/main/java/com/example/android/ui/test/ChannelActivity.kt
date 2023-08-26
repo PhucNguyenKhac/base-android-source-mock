@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
-import com.example.android.R
 import com.example.android.databinding.ActivityChannelBinding
 import com.example.android.ui.activity.BaseActivity
+import com.example.android.viewmodel.ChannelViewModel
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -52,17 +51,22 @@ class ChannelActivity : BaseActivity(), HasAndroidInjector {
         }
     }
 
+
     private fun setUpViews() {
         viewModel.channel.observe(this) {
-            it.items?.forEach { channel ->
-                binding.tvChannelName.text = channel.snippet?.title
-                binding.tvChannelDescription.text = channel.snippet?.description
-                Glide.with(this).load(channel.snippet?.thumbnails?.high?.url).error(R.drawable.image_not_available)
-                    .into(binding.imageLogo)
-            }
-        }
-    }
+//            it.items?.forEach { channel ->
+//                binding.tvChannelDescription.text = channel.snippet?.description
+                binding.tvChannelDescription.text = it.toString()
 
+//                binding.tvChannelName.text = channel.snippet?.title
+//                binding.tvChannelDescription.text = channel.snippet?.description
+//                binding.tvChannelDescription.text = channel.statistic?.viewCount
+//                Glide.with(this).load(channel.snippet?.thumbnails?.high?.url)
+//                    .error(R.drawable.image_not_available)
+//                    .into(binding.imageLogo)
+            }
+//        }
+    }
 
     override fun androidInjector(): AndroidInjector<Any> = androidInjector
 }

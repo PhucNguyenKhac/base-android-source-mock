@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.R
 import com.example.android.adapter.AlbumAdapter
-import com.example.android.adapter.ArtistAdapter
 import com.example.android.adapter.SongInAlbumAdapter
 import com.example.android.databinding.FragmentArcticsBinding
 import com.example.android.model.Album

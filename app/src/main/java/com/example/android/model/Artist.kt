@@ -1,7 +1,7 @@
 package com.example.android.model
 
 data class Artist(
-    val imageArtist: Int,
+    val imageArtist: String,
     val nameArtist: String,
-    val countListenerMonthly : Int
+    val descriptionArtist : String
 )
