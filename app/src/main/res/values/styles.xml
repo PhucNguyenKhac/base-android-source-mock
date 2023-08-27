@@ -38,11 +38,19 @@
 
     <style name="RoundCorner" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSizeTopLeft">0dp</item>
-        <item name="cornerSizeTopRight">0dp</item>
-        <item name="cornerSizeBottomLeft">36dp</item>
-        <item name="cornerSizeBottomRight">36dp</item>
+        <item name="cornerSizeTopLeft">@dimen/definite_dimen_0</item>
+        <item name="cornerSizeTopRight">@dimen/definite_dimen_0</item>
+        <item name="cornerSizeBottomLeft">@dimen/definite_dimen_36</item>
+        <item name="cornerSizeBottomRight">@dimen/definite_dimen_36</item>
         <item name="backgroundColor">#FF333333</item>
+    </style>
+
+    <style name="RoundCornerMusicPage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/definite_dimen_36</item>
+        <item name="cornerSizeTopRight">@dimen/definite_dimen_36</item>
+        <item name="cornerSizeBottomLeft">@dimen/definite_dimen_36</item>
+        <item name="cornerSizeBottomRight">@dimen/definite_dimen_36</item>
     </style>
 
 </resources>

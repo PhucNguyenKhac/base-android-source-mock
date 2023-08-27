@@ -1,4 +1,4 @@
-package com.example.android.ui.bottom_nav_fragment
+package com.example.android.ui.fragment.bottom_nav
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.android.R
@@ -15,9 +14,7 @@ import com.example.android.databinding.FragmentHomepageBinding
 import com.example.android.adapter.FragmentPageAdapter
 import com.example.android.adapter.SongAdapter
 import com.example.android.model.Song
-import com.example.android.ui.BaseFragment
 import com.google.android.material.tabs.TabLayout
-import dagger.android.HasAndroidInjector
 import kotlinx.android.synthetic.main.login_activity.view.*
 
 @Suppress("DEPRECATION")

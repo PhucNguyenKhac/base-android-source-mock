@@ -1,15 +1,13 @@
-package com.example.android.ui.login
+package com.example.android.ui.activity
 
 import android.os.Bundle
 import android.util.Log
 import android.util.SparseArray
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.core.util.forEach
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.databinding.LoginActivityBinding
-import com.example.android.ui.activity.BaseActivity
 import com.example.android.viewmodel.LoginViewModel
 import com.maxrave.kotlinyoutubeextractor.State
 import com.maxrave.kotlinyoutubeextractor.VideoMeta

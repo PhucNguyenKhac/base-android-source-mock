@@ -1,4 +1,4 @@
-package com.example.android.ui.bottom_nav_fragment
+package com.example.android.ui.fragment.bottom_nav
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android.adapter.ArtistAdapter
 import com.example.android.databinding.FragmentArtistBinding
-import com.example.android.ui.BaseFragment
+import com.example.android.ui.fragment.BaseFragment
 import com.example.android.viewmodel.ChannelViewModel
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector

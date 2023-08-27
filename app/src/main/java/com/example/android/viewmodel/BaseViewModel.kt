@@ -1,4 +1,4 @@
-package com.example.android.ui
+package com.example.android.viewmodel
 
 import androidx.lifecycle.ViewModel
 

@@ -2,13 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/homepageFragment"
+    app:startDestination="@id/get_started_fragment"
     android:id="@+id/splash_nav_graph"
     >
 
     <fragment
         android:id="@+id/get_started_fragment"
-        android:name="com.example.android.ui.GetStartedFragment"
+        android:name="com.example.android.ui.fragment.login.GetStartedFragment"
         tools:layout="@layout/get_started_fragment"
         >
         <action
@@ -19,22 +19,22 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.android.ui.login.SignUpFragment"
+        android:name="com.example.android.ui.fragment.login.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.android.ui.login.LoginFragment"
+        android:name="com.example.android.ui.fragment.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login"/>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.android.ui.login.RegisterFragment"
+        android:name="com.example.android.ui.fragment.login.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register"/>
     <fragment
         android:id="@+id/homepageFragment"
-        android:name="com.example.android.ui.bottom_nav_fragment.HomepageFragment"
+        android:name="com.example.android.ui.fragment.bottom_nav.HomepageFragment"
         android:label="fragment_homepage"
         tools:layout="@layout/fragment_homepage" >
         <action
@@ -43,14 +43,23 @@
     </fragment>
     <fragment
         android:id="@+id/playlistFragment"
-        android:name="com.example.android.ui.bottom_nav_fragment.LibraryFragment"
+        android:name="com.example.android.ui.fragment.bottom_nav.LibraryFragment"
         android:label="PlaylistFragment"
         tools:layout="@layout/fragment_library"/>
     <fragment
         android:id="@+id/arcticsFragment"
-        android:name="com.example.android.ui.bottom_nav_fragment.ArcticsFragment"
+        android:name="com.example.android.ui.fragment.bottom_nav.ArcticsFragment"
         android:label="ArcticsFragment" />
-
+    <fragment
+        android:id="@+id/lyricPageFragment"
+        android:name="com.example.android.ui.fragment.playing_music.LyricPageFragment"
+        android:label="LyricPageFragment"
+        tools:layout="@layout/fragment_lyric_page"/>
+    <fragment
+        android:id="@+id/musicPageFragment"
+        android:name="com.example.android.ui.fragment.playing_music.MusicPageFragment"
+        android:label="MusicPageFragment"
+        tools:layout="@layout/fragment_music_page"/>
 
 
     <!--    <fragment-->
