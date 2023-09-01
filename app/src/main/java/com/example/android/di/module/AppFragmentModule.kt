@@ -57,5 +57,11 @@ internal abstract class AppFragmentModule {
     @FragmentScoped
     @ContributesAndroidInjector
     internal abstract fun contributeMusicPageFragment(): MusicPageFragment
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    internal abstract fun contributeProfileFragment(): ProfileFragment
+
+
 }
 
