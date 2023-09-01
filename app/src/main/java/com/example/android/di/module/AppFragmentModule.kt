@@ -5,6 +5,7 @@ import com.example.android.ui.GetStartedFragment
 import com.example.android.ui.bottom_nav_fragment.ArtistFragment
 import com.example.android.ui.bottom_nav_fragment.HomepageFragment
 import com.example.android.ui.bottom_nav_fragment.LibraryFragment
+import com.example.android.ui.bottom_nav_fragment.ProfileFragment
 import com.example.android.ui.login.LoginFragment
 import com.example.android.ui.login.RegisterFragment
 import dagger.Module
@@ -37,5 +38,11 @@ internal abstract class AppFragmentModule {
     @FragmentScoped
     @ContributesAndroidInjector
     internal abstract fun contributeArtistFragment(): ArtistFragment
+
+    @FragmentScoped
+    @ContributesAndroidInjector
+    internal abstract fun contributeProfileFragment(): ProfileFragment
+
+
 }
 
