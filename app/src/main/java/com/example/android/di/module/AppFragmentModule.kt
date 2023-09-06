@@ -1,7 +1,7 @@
 package com.example.android.di.module
 
 import com.example.android.di.scope.FragmentScoped
-import com.example.android.ui.fragment.bottom_nav.ArcticsFragment
+import com.example.android.ui.fragment.bottom_nav.ArtistInfoFragment
 import com.example.android.ui.fragment.bottom_nav.ArtistFragment
 import com.example.android.ui.fragment.bottom_nav.HomepageFragment
 import com.example.android.ui.fragment.bottom_nav.LibraryFragment
@@ -49,11 +49,12 @@ internal abstract class AppFragmentModule {
 
     @FragmentScoped
     @ContributesAndroidInjector
-    internal abstract fun contributeArcticsFragment(): ArcticsFragment
+    internal abstract fun contributeArcticsFragment(): ArtistInfoFragment
 
     @FragmentScoped
     @ContributesAndroidInjector
     internal abstract fun contributeLyricPageFragment(): LyricPageFragment
+
     @FragmentScoped
     @ContributesAndroidInjector
     internal abstract fun contributeMusicPageFragment(): MusicPageFragment

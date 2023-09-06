@@ -15,9 +15,8 @@
 
     <FrameLayout
         android:id="@+id/artist_img_frame"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/grey"
         app:layout_constraintBottom_toTopOf="@id/horizontal_guideline_for_artist_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,9 +26,9 @@
             android:id="@+id/artist_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
             android:background="@drawable/rounded_image"
-            android:src="@drawable/artics_profile"
+            android:src="@drawable/image_not_available"
             app:shapeAppearanceOverlay="@style/RoundCorner" />
     </FrameLayout>
 
@@ -80,7 +79,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/definite_dimen_20"
         android:fontFamily="@font/montserrat"
-        android:text="@string/name_of_artist"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/text_size_xxlarge"
         android:textStyle="bold"
@@ -114,7 +112,6 @@
                     android:id="@+id/number_follower_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/gradient_color"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -149,6 +146,7 @@
                             android:textStyle="normal" />
 
                         <TextView
+                            android:id="@+id/tvFollowers"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -183,6 +181,7 @@
                             android:textSize="@dimen/text_size_normal" />
 
                         <TextView
+                            android:id="@+id/tvListeners"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"

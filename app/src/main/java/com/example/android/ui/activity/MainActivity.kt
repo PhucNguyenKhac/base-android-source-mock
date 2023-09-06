@@ -1,17 +1,20 @@
 package com.example.android.ui.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import com.example.android.R
 import com.example.android.databinding.ActivityMainBinding
 import com.example.android.ui.fragment.bottom_nav.HomepageFragment
 import com.example.android.ui.fragment.bottom_nav.LibraryFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity(override val toolBar: Toolbar? = null) : BaseActivity() {
 
     private var selectedTab = 1
 

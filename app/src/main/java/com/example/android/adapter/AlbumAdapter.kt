@@ -1,40 +1,49 @@
 package com.example.android.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.android.R
+import com.example.android.databinding.ItemAlbumBinding
 import com.example.android.model.Album
 
-class AlbumAdapter(private val albumList: List<Album>) :
-    RecyclerView.Adapter<AlbumAdapter.ViewHolder>() {
+class AlbumAdapter :
+    ListAdapter<Album, AlbumAdapter.AlbumHolder>(AlbumDiffCallback()) {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val albumImage: ImageView = itemView.findViewById(R.id.album_image)
-        val albumTitle: TextView = itemView.findViewById(R.id.album_name)
-        val yearRelease: TextView = itemView.findViewById(R.id.year_release)
+    inner class AlbumHolder(private val binding: ItemAlbumBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(album: Album) {
+            binding.albumName.text = album.albumName
+            binding.yearRelease.text = album.yearReleased
+            Glide.with(binding.root)
+                .load(album.imgAlbum)
+                .error(R.drawable.image_not_available)
+                .into(binding.albumImage)
+        }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_album_list, parent, false)
-        return ViewHolder(itemView)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumHolder {
+        val binding =
+            ItemAlbumBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return AlbumHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return albumList.size
+    override fun onBindViewHolder(holder: AlbumAdapter.AlbumHolder, position: Int) {
+        val album = getItem(position)
+        holder.bind(album)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentItem = albumList[position]
-        holder.albumImage.setImageResource(currentItem.imgAlbum)
-        holder.albumTitle.text = currentItem.albumName
-        holder.yearRelease.text = currentItem.yearReleased.toString()
+    class AlbumDiffCallback : DiffUtil.ItemCallback<Album>() {
+        override fun areItemsTheSame(oldItem: Album, newItem: Album): Boolean {
+            return oldItem.albumName == newItem.albumName
+        }
 
+        override fun areContentsTheSame(oldItem: Album, newItem: Album): Boolean {
+            return oldItem == newItem
+        }
     }
-
 
 }

@@ -9,31 +9,32 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions
 import com.example.android.R
-import com.example.android.databinding.ItemTodayHitsBinding
+import com.example.android.databinding.ItemSongsBinding
 import com.example.android.model.Song
 
-class SongAdapter :
-    ListAdapter<Song, SongAdapter.ViewHolder>(SongDiffCallback()) {
 
-    inner class ViewHolder(private val binding: ItemTodayHitsBinding) :
+class TopSongOfArtistAdapter :
+    ListAdapter<Song, TopSongOfArtistAdapter.ViewHolder>(SongDiffCallback()) {
+
+    inner class ViewHolder(private val binding: ItemSongsBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(song: Song) {
-            binding.tvTodayHitName.text = song.nameSong
-            binding.tvTodayHitArtist.text = song.artistSongName
+            binding.songName.text = song.nameSong
             Glide.with(binding.root)
                 .load(song.imageSong)
                 .error(R.drawable.image_not_available)
-                .into(binding.imgTodayHitItem)
+                .into(binding.albumImage)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
-            ItemTodayHitsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemSongsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: SongAdapter.ViewHolder, position: Int) {
+
+    override fun onBindViewHolder(holder: TopSongOfArtistAdapter.ViewHolder, position: Int) {
         val song = getItem(position)
         holder.bind(song)
     }
@@ -47,6 +48,5 @@ class SongAdapter :
             return oldItem == newItem
         }
     }
-
 
 }

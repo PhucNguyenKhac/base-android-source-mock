@@ -10,10 +10,11 @@ import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestOptions
 import com.example.android.R
 import com.example.android.databinding.ItemArtistBinding
+import com.example.android.listeners.IOnClickSongItemListener
 import com.example.android.model.Artist
 
-class ArtistAdapter : ListAdapter<Artist, ArtistAdapter.ArtistHolder>(ArtistDiffCallback()) {
-
+class ArtistAdapter(private val clickListener: IOnClickSongItemListener) :
+    ListAdapter<Artist, ArtistAdapter.ArtistHolder>(ArtistDiffCallback()) {
     inner class ArtistHolder(private val binding: ItemArtistBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(artist: Artist) {
@@ -24,6 +25,9 @@ class ArtistAdapter : ListAdapter<Artist, ArtistAdapter.ArtistHolder>(ArtistDiff
                 .apply(RequestOptions.bitmapTransform(CircleCrop()))
                 .error(R.drawable.image_not_available)
                 .into(binding.imgArtist)
+            binding.itemLayout.setOnClickListener {
+                this@ArtistAdapter.clickListener.onClickItemSong(artist)
+            }
         }
     }
 
@@ -34,7 +38,8 @@ class ArtistAdapter : ListAdapter<Artist, ArtistAdapter.ArtistHolder>(ArtistDiff
     }
 
     override fun onBindViewHolder(holder: ArtistHolder, position: Int) {
-        holder.bind(getItem(position))
+        val artist = getItem(position)
+        holder.bind(artist)
     }
 
     class ArtistDiffCallback : DiffUtil.ItemCallback<Artist>() {
