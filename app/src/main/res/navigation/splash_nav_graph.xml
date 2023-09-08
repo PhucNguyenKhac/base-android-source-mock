@@ -60,9 +60,15 @@
         android:name="com.example.android.ui.fragment.playing_music.MusicPageFragment"
         android:label="MusicPageFragment"
         tools:layout="@layout/fragment_music_page"/>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.android.ui.bottom_nav_fragment.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        />
 
 
     <!--    <fragment-->
-<!--        android:id="@+id/progressSplashFragment"-->
-<!--        android:name=""/>-->
+    <!--        android:id="@+id/progressSplashFragment"-->
+    <!--        android:name=""/>-->
 </navigation>
