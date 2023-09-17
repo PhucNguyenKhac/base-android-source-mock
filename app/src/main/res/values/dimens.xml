@@ -69,6 +69,7 @@
     <dimen name="SPACE_30DP">30dp</dimen>
     <dimen name="SPACE_58DP">58dp</dimen>
     <dimen name="SPACE_54DP">54dp</dimen>
+    <dimen name="SPACE_75DP">75dp</dimen>
 
 
 </resources>

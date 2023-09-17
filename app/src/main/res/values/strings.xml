@@ -39,5 +39,8 @@
     <string name="tv_singer_name">Sisa Rasa</string>
     <string name="tv_first_name">Mahalini</string>
     <string name="tv_lyric_up">Lyrics</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="see_all_28_played">See all 28 played</string>
 
 </resources>
